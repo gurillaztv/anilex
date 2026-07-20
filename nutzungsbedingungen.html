@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutzungsbedingungen &ndash; ANILEX</title>
+<meta name="description" content="Nutzungsbedingungen der App ANILEX: Regeln zur Nutzung, Hinweise zur KI-Arterkennung, Naturschutz und Haftung.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="assets/camera.png">
+<link rel="apple-touch-icon" href="assets/camera.png">
+<style>
+  :root{
+    --ink:#111614;
+    --muted:#5b655e;
+    --green:#2f7d46;
+    --green-dark:#245f36;
+    --green-soft:#e9f3ec;
+    --gold:#d4a017;
+    --gold-soft:#faf3de;
+    --paper:#ffffff;
+    --grey:#f5f6f3;
+    --line:#e6e9e4;
+    --round:'Arial Rounded MT Bold','SF Pro Rounded',ui-rounded,-apple-system,'Segoe UI',sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--grey);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:var(--green);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,.rounded{font-family:var(--round);letter-spacing:-.01em;color:var(--ink)}
+
+  /* ===== NAV ===== */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-logo img{height:40px;width:auto}
+  .nav-back{font-family:var(--round);font-size:.85rem;color:var(--muted);white-space:nowrap}
+  .nav-back:hover{color:var(--ink);text-decoration:none}
+
+  /* ===== LEGAL BODY ===== */
+  main.legal{padding:52px 24px 80px}
+  .legal-wrap{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(26px,5vw,58px);box-shadow:0 20px 50px rgba(17,22,20,.05)}
+  .eyebrow{display:inline-block;font-family:var(--round);font-size:.8rem;color:var(--green);background:var(--green-soft);padding:6px 16px;border-radius:999px;margin-bottom:18px}
+  .legal-wrap h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.1;margin-bottom:12px}
+  .stand{color:var(--muted);font-size:.95rem;margin-bottom:6px}
+  .intro{color:var(--muted);font-size:1.02rem;margin:16px 0 4px}
+  .legal-wrap h2{font-size:clamp(1.2rem,3vw,1.5rem);line-height:1.25;margin:44px 0 14px;scroll-margin-top:80px}
+  .legal-wrap h2 .num{color:var(--green);margin-right:.4em}
+  .legal-wrap h3{font-size:1.05rem;margin:22px 0 8px;color:var(--green-dark)}
+  .legal-wrap p{margin-bottom:14px;color:#26312c}
+  .legal-wrap ul,.legal-wrap ol{margin:0 0 16px 0;padding:0;list-style:none}
+  .legal-wrap li{position:relative;padding-left:26px;margin-bottom:9px;color:#26312c}
+  .legal-wrap li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .legal-wrap strong{color:var(--ink)}
+  hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+
+  .callout{background:var(--green-soft);border:1px solid rgba(47,125,70,.2);border-radius:16px;padding:22px 24px;margin:8px 0 18px}
+  .callout.gold{background:var(--gold-soft);border-color:#eeddab}
+  .callout p{margin-bottom:6px}
+  .callout p:last-child{margin-bottom:0}
+  .callout .addr{font-family:var(--round);font-size:1.05rem;line-height:1.55;color:var(--ink)}
+
+  /* ===== FOOTER ===== */
+  footer{border-top:1px solid var(--line);background:var(--paper);padding:34px 24px 46px;color:var(--muted);font-size:.9rem}
+  .foot-inner{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand img{height:30px;width:auto}
+  .foot-links{display:flex;flex-wrap:wrap;gap:14px 24px;font-weight:600}
+  .foot-links a{color:var(--muted)}
+  .foot-links a:hover{color:var(--ink);text-decoration:none}
+  .foot-links a[aria-current="page"]{color:var(--green)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html" aria-label="Zur Anilex Startseite">
+      <img src="assets/logo.png" alt="ANILEX – Snap them all">
+    </a>
+    <a class="nav-back" href="index.html">&larr; Zur Startseite</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="legal-wrap">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Nutzungsbedingungen</h1>
+    <p class="stand">Stand: Juli 2026</p>
+    <p class="intro">Diese Nutzungsbedingungen regeln die Nutzung der mobilen Anwendung &bdquo;ANILEX&ldquo;. Bitte lesen Sie sie aufmerksam, bevor Sie die App verwenden. Mit der Nutzung der App erklären Sie sich mit diesen Bedingungen einverstanden.</p>
+
+    <h2 id="anbieter"><span class="num">1.</span>Geltungsbereich und Anbieter</h2>
+    <p>Anbieter der App ANILEX (nachfolgend &bdquo;App&ldquo;) ist Philip Mauersberger, Neurottstraße 6a, 68775 Ketsch, Deutschland (nachfolgend &bdquo;wir&ldquo; oder &bdquo;Anbieter&ldquo;; die vollständigen Angaben finden Sie im <a href="impressum.html">Impressum</a>). Diese Nutzungsbedingungen gelten für die Nutzung der App durch Sie als Nutzerin oder Nutzer.</p>
+    <p>Ergänzend gilt unsere <a href="datenschutz.html">Datenschutzerklärung</a>, die erläutert, wie wir mit Daten umgehen.</p>
+
+    <h2 id="beschreibung"><span class="num">2.</span>Beschreibung der App</h2>
+    <p>ANILEX ist ein <strong>kostenloses Sammelspiel</strong>, mit dem Sie echte Tiere in Ihrer Umgebung entdecken können. Sie fotografieren ein Tier, eine KI-gestützte Arterkennung schlägt die Tierart vor, und Sie sammeln Ihre Funde als Foto-Sticker in einem persönlichen Index. Ergänzend bietet die App spielerische Elemente wie Steckbriefe, Quizfragen, Erfolge und eine persönliche Fundkarte.</p>
+
+    <h2 id="verfuegbarkeit"><span class="num">3.</span>Kein Anspruch auf Verfügbarkeit</h2>
+    <p>Wir stellen die App mit Sorgfalt bereit, gewähren jedoch <strong>keinen Anspruch auf ständige, ununterbrochene oder fehlerfreie Verfügbarkeit</strong>. Einzelne Funktionen (etwa die serverbasierte Arterkennung oder das Laden des Artkatalogs) setzen eine funktionierende Internetverbindung und die Verfügbarkeit von Drittanbieter-Diensten voraus. Wir behalten uns vor, die App, einzelne Funktionen oder den Betrieb ganz oder teilweise zu ändern, einzuschränken oder einzustellen, soweit dies für Sie zumutbar ist.</p>
+
+    <h2 id="verantwortung"><span class="num">4.</span>Nutzung auf eigene Verantwortung &ndash; Sicherheit</h2>
+    <p>Die Nutzung der App erfolgt auf Ihre eigene Verantwortung. Achten Sie stets auf Ihre Umgebung und Ihre Sicherheit:</p>
+    <ul>
+      <li>Nutzen Sie die App <strong>niemals während des Führens eines Fahrzeugs</strong> oder beim Radfahren.</li>
+      <li>Beachten Sie die Regeln des Straßenverkehrs und achten Sie auf andere Personen.</li>
+      <li>Betreten Sie keine gesperrten, gefährlichen oder privaten Bereiche, um ein Tier zu fotografieren.</li>
+      <li>Passen Sie Ihre Aufmerksamkeit an Gelände, Wetter und Umgebung an.</li>
+    </ul>
+    <p>Für Schäden, die aus einer unachtsamen Nutzung entstehen, sind Sie selbst verantwortlich.</p>
+
+    <h2 id="naturschutz"><span class="num">5.</span>Respekt vor Wildtieren und Natur</h2>
+    <p>ANILEX ist Beobachten statt Anfassen. Bitte begegnen Sie Tieren und der Natur mit Respekt:</p>
+    <ul>
+      <li>Halten Sie ausreichend <strong>Abstand</strong> und stören Sie Tiere nicht.</li>
+      <li><strong>Locken oder füttern</strong> Sie Tiere nicht an, um ein Foto zu erhalten.</li>
+      <li>Meiden Sie <strong>Nester, Bruten, Jungtiere und Ruheplätze</strong>.</li>
+      <li>Bleiben Sie auf den Wegen und respektieren Sie Schutzgebiete.</li>
+      <li>Beachten Sie die geltenden <strong>Naturschutz-, Arten- und Tierschutzgesetze</strong> sowie örtliche Vorschriften.</li>
+    </ul>
+
+    <h2 id="ki-hinweis"><span class="num">6.</span>KI-Arterkennung: nur eine Hilfe, keine Gewähr</h2>
+    <div class="callout gold">
+      <p>Die KI-gestützte Arterkennung liefert lediglich einen <strong>Vorschlag bzw. eine Schätzung</strong> der Tierart. Sie kann fehlerhaft sein. Wir übernehmen <strong>keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität</strong> der Erkennungsergebnisse und der angezeigten Informationen.</p>
+    </div>
+    <p>Die Arterkennung ist <strong>kein Ersatz für eine fachliche Bestimmung</strong> durch Expertinnen und Experten. Verlassen Sie sich insbesondere <strong>nicht</strong> auf die App, wenn es um sicherheitsrelevante Entscheidungen geht. Die App gibt <strong>keine Empfehlung zum Verzehr</strong> und <strong>keine Aussage zur Giftigkeit oder Gefährlichkeit</strong> von Tieren, Pflanzen oder Pilzen. Berühren, verzehren oder handhaben Sie niemals ein Lebewesen im Vertrauen auf eine Angabe der App.</p>
+
+    <h2 id="verbote"><span class="num">7.</span>Zulässige Nutzung und Verbote</h2>
+    <p>Sie verpflichten sich, die App nur im Rahmen der geltenden Gesetze und dieser Bedingungen zu nutzen. Insbesondere ist es untersagt:</p>
+    <ul>
+      <li>die App missbräuchlich oder für rechtswidrige Zwecke zu verwenden;</li>
+      <li>rechtswidrige, beleidigende oder anstößige Inhalte zu fotografieren oder über die App zu verbreiten;</li>
+      <li><strong>Persönlichkeitsrechte Dritter</strong> zu verletzen, insbesondere Personen ohne deren Einwilligung zu fotografieren;</li>
+      <li>die App oder die dahinterliegenden Dienste zu manipulieren, zu überlasten, zu umgehen oder in ihrer Funktion zu beeinträchtigen;</li>
+      <li>Schutzmechanismen zu umgehen oder die App zu dekompilieren, soweit dies nicht gesetzlich ausdrücklich erlaubt ist.</li>
+    </ul>
+
+    <h2 id="ip"><span class="num">8.</span>Geistiges Eigentum</h2>
+    <p>Die App sowie ihre Inhalte &ndash; insbesondere Software, Texte, Grafiken, Illustrationen (etwa die Figur &bdquo;Professor Eichhorn&ldquo;), das Logo, das Design und die Marke ANILEX &ndash; sind urheber- und kennzeichenrechtlich geschützt und stehen dem Anbieter bzw. seinen Lizenzgebern zu. Wir gewähren Ihnen ein einfaches, nicht übertragbares, widerrufliches Recht, die App auf Ihren Geräten für private Zwecke zu nutzen. Eine darüber hinausgehende Nutzung, Vervielfältigung oder Verwertung bedarf unserer vorherigen Zustimmung.</p>
+    <p>Die von Ihnen aufgenommenen Fotos verbleiben in Ihrem Eigentum bzw. unter Ihrer Rechtsinhaberschaft; die Speicherung erfolgt lokal auf Ihrem Gerät.</p>
+
+    <h2 id="haftung"><span class="num">9.</span>Haftungsbeschränkung</h2>
+    <p>Wir haften unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei der Verletzung von Leben, Körper oder Gesundheit. Bei <strong>leichter Fahrlässigkeit</strong> haften wir nur bei der Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht), deren Erfüllung die ordnungsgemäße Nutzung der App überhaupt erst ermöglicht und auf deren Einhaltung Sie regelmäßig vertrauen dürfen. In diesem Fall ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt.</p>
+    <p>Im Übrigen ist die Haftung für leichte Fahrlässigkeit &ndash; soweit gesetzlich zulässig &ndash; ausgeschlossen. Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt. Da die App unentgeltlich bereitgestellt wird, richten sich unsere Pflichten und unsere Haftung ergänzend nach den gesetzlichen Regelungen zur Schenkung bzw. zur unentgeltlichen Leistung. Für Entscheidungen, die Sie auf Grundlage der Arterkennung treffen, übernehmen wir keine Haftung (siehe Ziffer 6).</p>
+
+    <h2 id="aenderungen"><span class="num">10.</span>Änderungen der Nutzungsbedingungen</h2>
+    <p>Wir behalten uns vor, diese Nutzungsbedingungen mit Wirkung für die Zukunft zu ändern, etwa um sie an rechtliche Vorgaben oder an neue Funktionen anzupassen. Die jeweils aktuelle Fassung ist in der App bzw. auf dieser Seite abrufbar; den Stand erkennen Sie am Datum oben. Mit der weiteren Nutzung nach einer Änderung erklären Sie Ihr Einverständnis mit der jeweils geltenden Fassung.</p>
+
+    <h2 id="beendigung"><span class="num">11.</span>Beendigung</h2>
+    <p>Sie können die Nutzung der App jederzeit beenden, indem Sie die App von Ihrem Gerät deinstallieren. Wir sind berechtigt, die Bereitstellung der App aus wichtigem Grund einzustellen, insbesondere bei erheblichen Verstößen gegen diese Bedingungen oder geltendes Recht.</p>
+
+    <h2 id="apple"><span class="num">12.</span>Apple App Store</h2>
+    <p>Die App wird über den Apple App Store vertrieben. <strong>Apple ist ausschließlich die Vertriebsplattform und nicht Vertragspartner</strong> hinsichtlich der Nutzung der App. Für die App und ihre Inhalte ist allein der Anbieter (siehe Ziffer 1) verantwortlich. Ergänzend gelten die jeweiligen Nutzungsbedingungen von Apple für den App Store (insbesondere die &bdquo;Lizenzvereinbarung für lizenzierte Anwendungen&ldquo;/EULA). Im Verhältnis zu Apple gelten diese Regelungen vorrangig, soweit sie zwingend sind.</p>
+
+    <h2 id="recht"><span class="num">13.</span>Anwendbares Recht</h2>
+    <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Zwingende verbraucherschützende Bestimmungen des Staates, in dem Sie Ihren gewöhnlichen Aufenthalt haben, bleiben hiervon unberührt.</p>
+
+    <h2 id="salvatorisch"><span class="num">14.</span>Salvatorische Klausel</h2>
+    <p>Sollten einzelne Bestimmungen dieser Nutzungsbedingungen ganz oder teilweise unwirksam oder undurchführbar sein oder werden, so bleibt die Wirksamkeit der übrigen Bestimmungen davon unberührt. An die Stelle der unwirksamen Regelung tritt die gesetzliche Regelung.</p>
+
+    <h2 id="kontakt"><span class="num">15.</span>Kontakt</h2>
+    <div class="callout">
+      <p class="addr">Philip Mauersberger<br>
+      Neurottstraße 6a<br>
+      68775 Ketsch<br>
+      Deutschland</p>
+      <p>E-Mail: <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img src="assets/logo.png" alt="ANILEX">
+      <span>&copy; 2026 Anilex</span>
+    </div>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="index.html">Startseite</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="nutzungsbedingungen.html" aria-current="page">Nutzungsbedingungen</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

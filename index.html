@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANILEX – Fang jedes Tier, das du siehst</title>
+<meta name="description" content="Fotografiere ein Tier, lass die KI die Art erkennen und sammle es als Foto-Sticker in deinem persönlichen Index. 784 Arten, Professor Eichhorn, echte seltene Varianten. Kostenlos für iOS.">
+<meta property="og:title" content="ANILEX – Snap them all!">
+<meta property="og:description" content="Die Sammel-App für echte Tiere: fotografieren, erkennen lassen, als Foto-Sticker sammeln. 784 Arten. Kostenlos für iOS.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gurillaztv.github.io/anilex/assets/logo.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="assets/camera.png">
+<link rel="apple-touch-icon" href="assets/camera.png">
+<style>
+  :root{
+    --ink:#111614;
+    --muted:#5b655e;
+    --green:#2f7d46;
+    --green-dark:#245f36;
+    --green-soft:#e9f3ec;
+    --gold:#d4a017;
+    --gold-soft:#faf3de;
+    --paper:#ffffff;
+    --grey:#f5f6f3;
+    --line:#e6e9e4;
+    --round:'Arial Rounded MT Bold','SF Pro Rounded',ui-rounded,-apple-system,'Segoe UI',sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,.rounded{font-family:var(--round);letter-spacing:-.01em}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-logo img{height:40px;width:auto}
+  .nav-links{display:flex;gap:26px;align-items:center;font-size:.95rem;font-weight:600;color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{
+    background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;
+    font-family:var(--round);font-size:.85rem;white-space:nowrap;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .nav-cta:hover{background:#000;transform:scale(1.04);color:#fff}
+  @media (max-width:720px){ .nav-links a:not(.nav-cta){display:none} }
+
+  /* ============ HERO ============ */
+  .hero{position:relative;padding:64px 0 0;text-align:center;overflow:hidden}
+  .hero-bg{
+    position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(560px 340px at 18% 14%, rgba(47,125,70,.10), transparent 70%),
+      radial-gradient(520px 320px at 84% 20%, rgba(212,160,23,.10), transparent 70%),
+      radial-gradient(700px 480px at 50% 108%, rgba(47,125,70,.08), transparent 70%);
+  }
+  .hero-inner{position:relative;z-index:1}
+  .hero-logo{width:min(320px,68vw);margin:0 auto 30px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.14))}
+  .hero h1{
+    font-size:clamp(2.15rem,6.6vw,4.4rem);
+    line-height:1.06;
+    max-width:820px;margin:0 auto 20px;
+  }
+  .hero h1 .hl{color:var(--green)}
+  .hero-sub{
+    font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--muted);
+    max-width:640px;margin:0 auto 30px;
+  }
+  .store-pill{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--ink);color:#fff;
+    padding:12px 26px 12px 14px;border-radius:999px;
+    box-shadow:0 12px 28px rgba(17,22,20,.28);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .store-pill:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 16px 34px rgba(17,22,20,.34)}
+  .store-pill img{width:40px;height:40px;background:#fff;border-radius:12px;padding:2px}
+  .store-pill .sp-txt{text-align:left;line-height:1.15}
+  .store-pill .sp-txt small{display:block;font-size:.72rem;opacity:.75;font-weight:500;letter-spacing:.04em}
+  .store-pill .sp-txt strong{font-family:var(--round);font-size:1.15rem}
+  .hero-meta{margin-top:18px;font-size:.9rem;color:var(--muted);font-weight:500}
+  .hero-meta span{white-space:nowrap}
+  .hero-meta .dot{margin:0 8px;color:var(--line)}
+
+  /* hero stage: phone + floating stickers */
+  .hero-stage{position:relative;max-width:960px;margin:48px auto 0;padding-bottom:56px}
+  .float-sticker{position:absolute;z-index:2;filter:drop-shadow(0 14px 22px rgba(0,0,0,.18));will-change:transform}
+  .fs-fox{width:150px;left:6%;top:6%;animation:floatA 6.5s ease-in-out infinite}
+  .fs-robin{width:120px;right:8%;top:2%;animation:floatB 7.4s ease-in-out infinite}
+  .fs-hedgehog{width:150px;left:9%;bottom:14%;animation:floatB 8.2s ease-in-out infinite}
+  .fs-squirrel{width:145px;right:7%;bottom:10%;animation:floatA 7s ease-in-out .8s infinite}
+  @keyframes floatA{
+    0%,100%{transform:translateY(0) rotate(-4deg)}
+    50%{transform:translateY(-16px) rotate(3deg)}
+  }
+  @keyframes floatB{
+    0%,100%{transform:translateY(0) rotate(5deg)}
+    50%{transform:translateY(-13px) rotate(-3deg)}
+  }
+  @media (max-width:760px){
+    .fs-fox{width:74px;left:-12px;top:10%}
+    .fs-robin{width:62px;right:-8px;top:2%}
+    .fs-hedgehog{width:76px;left:-10px;bottom:8%}
+    .fs-squirrel{width:74px;right:-10px;bottom:3%}
+  }
+
+  /* ============ PHONE MOCKUP ============ */
+  .phone{
+    width:300px;margin:0 auto;position:relative;
+    background:#0c0e0d;border-radius:50px;padding:11px;
+    box-shadow:
+      0 0 0 2px #2a2d2b,
+      0 30px 70px rgba(17,22,20,.30),
+      0 10px 24px rgba(17,22,20,.18);
+  }
+  .phone::after{ /* side button hint */
+    content:"";position:absolute;right:-3px;top:120px;width:3px;height:64px;
+    background:#2a2d2b;border-radius:0 3px 3px 0;
+  }
+  .screen{
+    background:#fff;border-radius:40px;overflow:hidden;position:relative;
+    height:610px;display:flex;flex-direction:column;
+  }
+  .island{
+    position:absolute;top:11px;left:50%;transform:translateX(-50%);
+    width:92px;height:27px;background:#0c0e0d;border-radius:16px;z-index:9;
+  }
+  @media (max-width:760px){
+    .phone{width:262px}
+    .screen{height:534px}
+  }
+  /* echte App-Screenshots (1206x2622, Statusleiste + Tab-Bar bereits im Bild) */
+  .phone-shot .screen{height:auto}
+  .shot{width:100%;height:auto;display:block;border-radius:40px}
+
+  /* ============ SECTION BASICS ============ */
+  section{padding:96px 0}
+  .eyebrow{
+    display:inline-block;font-family:var(--round);font-size:.85rem;
+    color:var(--green);background:var(--green-soft);
+    padding:6px 16px;border-radius:999px;margin-bottom:18px;
+  }
+  .eyebrow.gold{color:#9a7410;background:var(--gold-soft)}
+  h2{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.12;margin-bottom:16px}
+  .sec-sub{color:var(--muted);font-size:1.1rem;max-width:600px}
+  .center{text-align:center}
+  .center .sec-sub{margin:0 auto}
+
+  /* scroll reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  /* ============ STATS STRIP ============ */
+  .stats{padding:40px 0 8px}
+  .stats-inner{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    background:var(--ink);border-radius:28px;padding:34px 24px;color:#fff;text-align:center;
+  }
+  .stat b{display:block;font-family:var(--round);font-size:clamp(1.6rem,3.4vw,2.4rem);color:#fff}
+  .stat b.gold{color:var(--gold)}
+  .stat b.grn{color:#7fc492}
+  .stat span{font-size:.85rem;color:#aab3ac;font-weight:600}
+  @media (max-width:720px){ .stats-inner{grid-template-columns:repeat(2,1fr);gap:24px 8px} }
+
+  /* ============ HOW IT WORKS ============ */
+  .how-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:26px}
+  .how-head img{width:150px;flex-shrink:0;filter:drop-shadow(0 10px 20px rgba(0,0,0,.15))}
+  @media (max-width:760px){ .how-head img{width:100px} }
+  .step{
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+    padding:56px 0;
+  }
+  .step:nth-child(even) .step-txt{order:2}
+  @media (max-width:860px){
+    .step{grid-template-columns:1fr;gap:36px;padding:40px 0}
+    .step:nth-child(even) .step-txt{order:0}
+  }
+  .step-num{
+    font-family:var(--round);font-size:.95rem;color:var(--green);
+    letter-spacing:.14em;margin-bottom:10px;display:block;
+  }
+  .step h3{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:14px}
+  .step p{color:var(--muted);font-size:1.05rem;max-width:460px}
+  .step ul{list-style:none;margin-top:18px;display:grid;gap:10px}
+  .step li{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:.95rem}
+  .step li::before{
+    content:"";width:20px;height:20px;flex-shrink:0;margin-top:2px;border-radius:50%;
+    background:var(--green-soft) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%232f7d46" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-11"/></svg>') center/11px no-repeat;
+  }
+
+  /* --- Mockup 1: FANGEN (7s loop, echtes Foto im Sucher) --- */
+  .cam-screen{background:#0c0e0d}
+  .cam-photo{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+    transform-origin:center;
+    animation:camZoom 7s ease-in-out infinite;
+  }
+  @keyframes camZoom{
+    0%{transform:scale(1)}
+    45%,100%{transform:scale(1.055)}
+  }
+  .cam-dim{
+    position:absolute;inset:0;z-index:5;
+    background:rgba(252,254,252,.55);
+    -webkit-backdrop-filter:blur(14px) saturate(1.05);
+    backdrop-filter:blur(14px) saturate(1.05);
+    opacity:0;animation:dimIn 7s ease infinite;
+  }
+  @keyframes dimIn{
+    0%,46%{opacity:0}
+    52%{opacity:1}
+    91%{opacity:1}
+    96%,100%{opacity:0}
+  }
+  .cam-top{position:absolute;top:48px;left:0;right:0;text-align:center;z-index:4;animation:scanGate 7s linear infinite}
+  .cam-top span{font-family:var(--round);font-size:.72rem;color:#fff;background:rgba(0,0,0,.35);padding:4px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+  .scan-gate{position:absolute;inset:86px 30px 150px;z-index:3;overflow:hidden;animation:scanGate 7s linear infinite}
+  @keyframes scanGate{0%,44%{opacity:1}48%,100%{opacity:0}}
+  .vf{position:absolute;inset:0;pointer-events:none}
+  .vf i{position:absolute;width:30px;height:30px;border:3.5px solid #fff;opacity:.95}
+  .vf i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0;border-radius:10px 0 0 0}
+  .vf i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0;border-radius:0 10px 0 0}
+  .vf i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0;border-radius:0 0 0 10px}
+  .vf i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0;border-radius:0 0 10px 0}
+  .scan-line{
+    position:absolute;left:6px;right:6px;height:3px;border-radius:99px;
+    background:linear-gradient(90deg,transparent,#b6ffcf 30%,#fff 50%,#b6ffcf 70%,transparent);
+    box-shadow:0 0 14px rgba(140,255,180,.85);
+    animation:scanMove 1.55s ease-in-out infinite alternate;
+  }
+  @keyframes scanMove{from{top:4%}to{top:94%}}
+  .cam-flash{position:absolute;inset:0;background:#fff;z-index:6;opacity:0;animation:flash 7s linear infinite;pointer-events:none}
+  @keyframes flash{0%,45%{opacity:0}47%{opacity:.92}50%,100%{opacity:0}}
+  .recog{
+    position:absolute;top:78px;left:50%;transform:translateX(-50%);z-index:7;
+    display:flex;align-items:center;gap:7px;background:#fff;border-radius:999px;
+    padding:7px 14px;box-shadow:0 8px 20px rgba(0,0,0,.25);white-space:nowrap;
+    opacity:0;animation:recogIn 7s ease infinite;
+  }
+  .recog b{font-family:var(--round);font-size:.8rem}
+  .recog em{font-style:normal;font-size:.72rem;color:var(--green);font-weight:800}
+  .recog::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+  @keyframes recogIn{
+    0%,49%{opacity:0;transform:translateX(-50%) translateY(-12px)}
+    53%{opacity:1;transform:translateX(-50%) translateY(0)}
+    92%{opacity:1}
+    96%,100%{opacity:0}
+  }
+  .cap-sticker{
+    position:absolute;left:50%;top:44%;width:58%;z-index:7;
+    transform:translate(-50%,-50%) scale(0);opacity:0;
+    filter:drop-shadow(0 16px 26px rgba(0,0,0,.35));
+    animation:stickerPop 7s ease infinite;
+  }
+  @keyframes stickerPop{
+    0%,52%{transform:translate(-50%,-50%) scale(0) rotate(-10deg);opacity:0}
+    57%{transform:translate(-50%,-50%) scale(1.16) rotate(4deg);opacity:1}
+    60%{transform:translate(-50%,-50%) scale(.93) rotate(-2deg)}
+    63%{transform:translate(-50%,-50%) scale(1.05) rotate(1deg)}
+    66%{transform:translate(-50%,-50%) scale(1) rotate(0)}
+    91%{transform:translate(-50%,-50%) scale(1);opacity:1}
+    96%,100%{transform:translate(-50%,-50%) scale(.85);opacity:0}
+  }
+  .xp-pop{
+    position:absolute;left:50%;top:76%;transform:translateX(-50%);z-index:7;
+    font-family:var(--round);font-size:.85rem;color:#9a7410;background:var(--gold-soft);
+    border:1.5px solid #eeddab;
+    padding:5px 14px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,.18);
+    opacity:0;animation:xpIn 7s ease infinite;
+  }
+  @keyframes xpIn{
+    0%,62%{opacity:0;transform:translateX(-50%) translateY(10px) scale(.7)}
+    67%{opacity:1;transform:translateX(-50%) translateY(0) scale(1.06)}
+    70%{transform:translateX(-50%) scale(1)}
+    91%{opacity:1}
+    95%,100%{opacity:0}
+  }
+  .fab{
+    position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+    width:64px;height:64px;background:#0c0e0d;border:3px solid #fff;border-radius:50%;
+    display:grid;place-items:center;z-index:8;
+    box-shadow:0 6px 16px rgba(0,0,0,.35);
+  }
+  .fab img{width:64%;height:64%;object-fit:contain;filter:invert(1)}
+
+  /* ============ PROFESSOR ============ */
+  .prof-sec{background:linear-gradient(180deg,#fff 0%,var(--green-soft) 18%,var(--green-soft) 82%,#fff 100%)}
+  .prof-grid{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:56px;align-items:center}
+  @media (max-width:860px){ .prof-grid{grid-template-columns:1fr;gap:20px} }
+  .prof-img-wrap{position:relative;text-align:center}
+  .prof-img-wrap > img{width:min(360px,76%);margin:0 auto;filter:drop-shadow(0 24px 40px rgba(36,64,44,.28));animation:profBob 5s ease-in-out infinite}
+  @keyframes profBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  /* kleines Quiz-Phone mit echtem Screenshot */
+  .quiz-phone{
+    position:absolute;right:-6px;bottom:-26px;width:158px;
+    background:#0c0e0d;border-radius:26px;padding:6px;
+    box-shadow:0 0 0 2px #2a2d2b,0 20px 44px rgba(17,22,20,.32);
+    transform:rotate(6deg);
+    animation:quizBob 6.5s ease-in-out infinite;
+  }
+  .quiz-phone img{width:100%;display:block;border-radius:20px}
+  @keyframes quizBob{
+    0%,100%{transform:rotate(6deg) translateY(0)}
+    50%{transform:rotate(6deg) translateY(-8px)}
+  }
+  @media (max-width:860px){
+    .quiz-phone{width:122px;right:4%;bottom:-14px}
+  }
+  .bubble{
+    position:relative;background:#fff;border-radius:22px;
+    padding:20px 24px;margin-bottom:26px;max-width:520px;
+    box-shadow:0 14px 34px rgba(36,64,44,.14);
+    font-family:var(--round);font-size:clamp(1.1rem,2.4vw,1.45rem);line-height:1.4;
+    min-height:76px;
+  }
+  .bubble::before{
+    content:"";position:absolute;left:-12px;top:34px;
+    border:12px solid transparent;border-right-color:#fff;border-left:0;
+  }
+  @media (max-width:860px){
+    .bubble::before{left:38px;top:-12px;border:12px solid transparent;border-bottom-color:#fff;border-top:0}
+  }
+  .bubble .caret{display:inline-block;width:3px;height:1.05em;background:var(--green);vertical-align:text-bottom;margin-left:2px;animation:caretBlink 1s steps(2) infinite}
+  @keyframes caretBlink{50%{opacity:0}}
+  .prof-chips{display:flex;flex-wrap:wrap;gap:10px}
+  .prof-chips span{
+    background:#fff;border:2px solid rgba(47,125,70,.25);color:var(--green-dark);
+    font-family:var(--round);font-size:.92rem;padding:9px 18px;border-radius:999px;
+    box-shadow:0 4px 12px rgba(36,64,44,.08);
+  }
+  .prof-copy p{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:22px}
+
+  /* ============ FEATURES ============ */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  @media (max-width:900px){ .feat-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:580px){ .feat-grid{grid-template-columns:1fr} }
+  .feat{
+    background:var(--grey);border-radius:24px;padding:28px 26px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .feat:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(17,22,20,.10)}
+  .feat.gold{background:linear-gradient(150deg,var(--gold-soft),#fdf9ec);border:1.5px solid #eeddab}
+  /* Sticker-Badges statt generischer Icons: weisser Kreis wie App-Tab-Bar / Karten-Pins */
+  .feat-badge{
+    width:68px;height:68px;border-radius:50%;background:#fff;
+    display:grid;place-items:center;margin-bottom:16px;
+    box-shadow:0 8px 20px rgba(17,22,20,.15);
+  }
+  .feat-badge img{width:72%;height:72%;object-fit:contain}
+  .feat-badge.big img{width:84%;height:84%}
+  .trust-card .feat-badge{border:1.5px solid var(--line);box-shadow:0 8px 20px rgba(17,22,20,.10)}
+  .feat h3{font-size:1.15rem;margin-bottom:8px}
+  .feat p{color:var(--muted);font-size:.95rem}
+  .feat .mini{display:inline-block;margin-top:12px;font-family:var(--round);font-size:.72rem;color:var(--green);background:#fff;padding:4px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(17,22,20,.06)}
+  .feat.gold .mini{color:#9a7410}
+  .map-prev{
+    margin-top:16px;height:170px;border-radius:16px;overflow:hidden;
+    box-shadow:0 6px 16px rgba(17,22,20,.12);
+  }
+  .map-prev img{width:100%;height:100%;object-fit:cover;object-position:50% 76%}
+
+  /* ============ TRUST ============ */
+  .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+  @media (max-width:760px){ .trust-grid{grid-template-columns:1fr} }
+  .trust-card{
+    border:1.5px solid var(--line);border-radius:28px;padding:36px 32px;
+    background:#fff;
+  }
+  .trust-card h3{font-size:1.35rem;margin-bottom:10px}
+  .trust-card p{color:var(--muted);font-size:1rem}
+  .trust-card ul{list-style:none;margin-top:16px;display:grid;gap:8px}
+  .trust-card li{display:flex;gap:10px;font-size:.93rem;font-weight:600;color:var(--ink)}
+  .trust-card li::before{content:"·";color:var(--green);font-weight:900;font-size:1.4rem;line-height:1}
+
+  /* ============ CTA ============ */
+  .cta-card{
+    position:relative;
+    background:linear-gradient(140deg,var(--green-dark),var(--green) 55%,#3f9558);
+    border-radius:36px;padding:64px 48px;color:#fff;
+    display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center;
+  }
+  @media (max-width:820px){
+    .cta-card{grid-template-columns:1fr;text-align:center;padding:48px 28px}
+    .cta-prof{margin:0 auto}
+  }
+  .cta-card > *{position:relative;z-index:1}
+  .cta-card h2{color:#fff;max-width:520px}
+  @media (max-width:820px){ .cta-card h2{margin-left:auto;margin-right:auto} }
+  .cta-card p{color:#d7e9dc;max-width:460px;margin-bottom:28px}
+  @media (max-width:820px){ .cta-card p{margin-left:auto;margin-right:auto} }
+  .cta-card .store-pill{background:#fff;color:var(--ink);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+  .cta-card .store-pill small{opacity:.6}
+  .cta-prof{width:min(300px,70vw);filter:drop-shadow(0 20px 34px rgba(0,0,0,.3));animation:profBob 5.4s ease-in-out infinite}
+  .cta-note{margin-top:16px;font-size:.9rem;color:#e3f1e7;font-weight:600}
+  /* Foto-Sticker dynamisch ueber die Box gelegt */
+  .cta-stk{position:absolute;z-index:2;pointer-events:none;filter:drop-shadow(0 14px 24px rgba(0,0,0,.30))}
+  .cta-stk img{width:100%;display:block;animation:ctaFloat 6.5s ease-in-out infinite}
+  @keyframes ctaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .cs1{width:100px;top:-44px;left:-32px;transform:rotate(-9deg)}
+  .cs2{width:128px;top:-42px;right:-30px;transform:rotate(10deg)}
+  .cs2 img{animation-delay:.9s}
+  .cs3{width:110px;bottom:-40px;left:48%;transform:rotate(-6deg)}
+  .cs3 img{animation-delay:1.7s}
+  .cs4{width:124px;bottom:-32px;right:-34px;transform:rotate(8deg)}
+  .cs4 img{animation-delay:.5s}
+  @media (max-width:820px){
+    .cs1{width:70px;top:-30px;left:-14px}
+    .cs2{width:90px;top:-32px;right:-16px}
+    .cs3{width:80px;left:6%;bottom:-28px}
+    .cs4{width:90px;right:-18px;bottom:-24px}
+  }
+
+  /* ============ FOOTER ============ */
+  footer{border-top:1px solid var(--line);padding:40px 0 48px;color:var(--muted);font-size:.9rem}
+  .foot-inner{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between}
+  .foot-links{display:flex;gap:24px;font-weight:600}
+  .foot-links a:hover{color:var(--ink)}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand img{height:30px;width:auto}
+
+  /* ============ REDUCED MOTION ============ */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none !important;transition:none !important}
+    .rv{opacity:1;transform:none}
+    .cam-photo{transform:scale(1.05)}
+    .cam-dim{opacity:1}
+    .scan-gate,.cam-top{opacity:0}
+    .recog{opacity:1;transform:translateX(-50%)}
+    .cap-sticker{transform:translate(-50%,-50%) scale(1);opacity:1}
+    .xp-pop{opacity:1;transform:translateX(-50%)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="#top" aria-label="Anilex Startseite">
+      <img src="assets/logo.png" alt="ANILEX – Snap them all">
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#how">So funktioniert&rsquo;s</a>
+      <a href="#professor">Professor</a>
+      <a href="#features">Features</a>
+      <a class="nav-cta" href="#cta">Bald im App Store</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <img class="hero-logo" src="assets/logo.png" alt="ANILEX – Snap them all">
+    <h1>Fang jedes Tier,<br>das du <span class="hl">siehst</span>.</h1>
+    <p class="hero-sub">Foto machen, Art erkennen lassen, Sticker einsammeln: Anilex verwandelt jeden Spaziergang in eine Sammel-Expedition &ndash; mit 784 echten Arten direkt vor deiner Haustür.</p>
+    <a class="store-pill" href="#cta">
+      <img src="assets/camera.png" alt="">
+      <span class="sp-txt"><small>BALD IM</small><strong>App Store</strong></span>
+    </a>
+    <p class="hero-meta">
+      <span>Kostenlos</span><span class="dot">&bull;</span>
+      <span>Deutsch &amp; Englisch</span><span class="dot">&bull;</span>
+      <span>iOS&nbsp;17+</span>
+    </p>
+
+    <div class="hero-stage">
+      <img class="float-sticker fs-fox" src="assets/fox.png" alt="" aria-hidden="true">
+      <img class="float-sticker fs-robin" src="assets/robin.png" alt="" aria-hidden="true">
+      <img class="float-sticker fs-hedgehog" src="assets/hedgehog.png" alt="" aria-hidden="true">
+      <img class="float-sticker fs-squirrel" src="assets/squirrel.png" alt="" aria-hidden="true">
+
+      <!-- Hero-Phone: echter Index-Screenshot -->
+      <div class="phone phone-shot" role="img" aria-label="Echter App-Screenshot: der Tier-Index mit Zähler 8 von 784, Filter-Pills und Raster aus Foto-Stickern und grauen Silhouetten">
+        <div class="screen">
+          <img class="shot" src="assets/03_index.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats" aria-label="Zahlen zur App">
+  <div class="wrap">
+    <div class="stats-inner rv">
+      <div class="stat"><b class="grn">784</b><span>Arten im Index</span></div>
+      <div class="stat"><b>7.000+</b><span>Quiz-Fragen</span></div>
+      <div class="stat"><b class="gold">3&times;&nbsp;XP</b><span>für echte seltene Varianten</span></div>
+      <div class="stat"><b>48</b><span>Erfolge</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how">
+  <div class="wrap">
+    <div class="how-head rv">
+      <div>
+        <span class="eyebrow">So funktioniert&rsquo;s</span>
+        <h2>Von der Begegnung<br>zum Sticker &ndash; in Sekunden.</h2>
+      </div>
+      <img src="assets/prof_point.png" alt="Professor Eichhorn zeigt auf die Anleitung">
+    </div>
+
+    <!-- STEP 1: FANGEN -->
+    <div class="step rv">
+      <div class="step-txt">
+        <span class="step-num">SCHRITT 01</span>
+        <h3>Fangen</h3>
+        <p>Du entdeckst ein Tier, du zückst dein iPhone, du drückst ab. Die KI erkennt die Art in Sekunden &ndash; vom Rotfuchs bis zum Admiral.</p>
+        <ul>
+          <li>Erkennt 784 Arten: Säugetiere, Vögel, Insekten, Reptilien, Amphibien, Fische u.&nbsp;v.&nbsp;m.</li>
+          <li>Dein Foto wird automatisch freigestellt</li>
+          <li>Fertig ist dein persönlicher Foto-Sticker</li>
+        </ul>
+      </div>
+      <div class="phone" role="img" aria-label="Animierter Kamera-Sucher: Ein echtes Foto eines Eisvogels auf einem Ast wird gescannt, als Eisvogel mit 97 Prozent erkannt und als freigestellter Foto-Sticker mit 150 XP eingesammelt">
+        <div class="screen cam-screen">
+          <div class="island"></div>
+          <img class="cam-photo" src="assets/env_kingfisher_photo.jpg" alt="">
+          <div class="cam-top"><span>Tier im Sucher &hellip;</span></div>
+          <div class="scan-gate">
+            <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="scan-line"></div>
+          </div>
+          <div class="cam-flash"></div>
+          <div class="cam-dim"></div>
+          <div class="recog"><b>Eisvogel</b><em>97&nbsp;%</em></div>
+          <img class="cap-sticker" src="assets/sticker_kingfisher.png" alt="">
+          <div class="xp-pop">+150&nbsp;XP</div>
+          <div class="fab" aria-hidden="true"><img src="assets/camera.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: SAMMELN -->
+    <div class="step rv">
+      <div class="step-txt">
+        <span class="step-num">SCHRITT 02</span>
+        <h3>Sammeln</h3>
+        <p>Jeder Fang bekommt eine eigene Karte mit Seltenheitsstufe von Häufig bis Legendär &ndash; und einem Steckbrief, der dich zum Artenkenner macht.</p>
+        <ul>
+          <li>Nahrung, Lebensraum, Verbreitung, Alter, Größe</li>
+          <li>Seltenheitsstufen: Häufig &rarr; Legendär</li>
+          <li>Echte seltene Varianten wie das schwarze Eichhörnchen bringen 3&times;&nbsp;XP</li>
+        </ul>
+      </div>
+      <div class="phone phone-shot" role="img" aria-label="Echter App-Screenshot: Detailkarte des Rotfuchses mit Foto-Sticker, Seltenheits-Badge und Steckbrief zu Nahrung, Lebensraum und Verbreitung">
+        <div class="screen">
+          <img class="shot" src="assets/04_detail.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3: INDEX FUELLEN -->
+    <div class="step rv">
+      <div class="step-txt">
+        <span class="step-num">SCHRITT 03</span>
+        <h3>Index füllen</h3>
+        <p>Aus grauen Silhouetten werden nach und nach deine Foto-Sticker. 784 Felder warten &ndash; wie viele schaffst du?</p>
+        <ul>
+          <li>Ungefangene Arten als graue Silhouetten mit Sticker-Rahmen</li>
+          <li>Fang-Karte mit Sticker-Pins an deinen Fundorten</li>
+          <li>Teilbare Sammler-Karte für deine Freunde</li>
+        </ul>
+      </div>
+      <div class="phone phone-shot" role="img" aria-label="Echter App-Screenshot: der Filter Entdeckt zeigt alle acht gesammelten Foto-Sticker vom Rotfuchs bis zur Schneeeule">
+        <div class="screen">
+          <img class="shot" src="assets/03b_entdeckt.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROFESSOR ================= -->
+<section class="prof-sec" id="professor">
+  <div class="wrap">
+    <div class="prof-grid">
+      <div class="prof-img-wrap rv">
+        <img src="assets/prof_wave.png" alt="Professor Eichhorn winkt – ein Eichhörnchen mit goldener Brille, Tweed-Weste und Notizblock">
+        <div class="quiz-phone" role="img" aria-label="Echter App-Screenshot: das Tier-Quiz von Professor Eichhorn mit der Frage Welches Tier ist das?">
+          <img src="assets/06b_quiz.png" alt="">
+        </div>
+      </div>
+      <div class="prof-copy rv">
+        <div class="bubble" aria-live="polite"><span id="typewriter">Na, num-num! Bereit für deine erste Mission?</span><span class="caret" aria-hidden="true"></span></div>
+        <span class="eyebrow">Dein Begleiter</span>
+        <h2>Professor Eichhorn kennt jeden Trick.</h2>
+        <p>Der sprechende Professor begleitet dich auf jeder Tour: Er stellt dir tägliche Quests, schickt dich auf Missionsketten, löchert dich mit Quiz-Fragen &ndash; und feiert jeden Fang, als wäre es sein eigener.</p>
+        <div class="prof-chips">
+          <span>Tägliche Quests</span>
+          <span>Tier-Quiz mit 7.000+ Fragen</span>
+          <span>10 Missionsketten</span>
+          <span>48 Erfolge</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section id="features">
+  <div class="wrap center">
+    <span class="eyebrow rv">Alles drin</span>
+    <h2 class="rv">Mehr als nur ein Foto-Album.</h2>
+    <p class="sec-sub rv">Anilex macht aus deinen Tier-Begegnungen eine echte Sammlung &ndash; mit allem, was das Sammlerherz begehrt.</p>
+    <div class="feat-grid" style="text-align:left">
+      <div class="feat rv">
+        <div class="feat-badge"><img src="assets/robin.png" alt=""></div>
+        <h3>Fang-Karte</h3>
+        <p>Jeder Fang wird als Sticker-Pin auf deiner Karte verewigt. So siehst du genau, wo du den Eisvogel entdeckt hast.</p>
+        <div class="map-prev"><img src="assets/07_map.png" alt="Echter App-Screenshot der Fang-Karte mit Sticker-Pins auf der Landkarte"></div>
+      </div>
+      <div class="feat gold rv">
+        <div class="feat-badge"><img src="assets/sticker_blacksquirrel.png" alt=""></div>
+        <h3>Seltene Varianten</h3>
+        <p>Ein schwarzes Eichhörnchen? Gibt&rsquo;s wirklich &ndash; und bringt dir 3&times;&nbsp;XP. Keine Zufalls-Effekte, nur echte Naturphänomene.</p>
+        <span class="mini">Häufig &rarr; Legendär</span>
+      </div>
+      <div class="feat rv">
+        <div class="feat-badge"><img src="assets/sticker_owl.png" alt=""></div>
+        <h3>Steckbriefe</h3>
+        <p>Nahrung, Lebensraum, Verbreitung, Alter und Größe: Zu jedem Tier gibt&rsquo;s das Wissen gleich dazu.</p>
+        <span class="mini">784 Arten</span>
+      </div>
+      <div class="feat rv">
+        <div class="feat-badge"><img src="assets/sticker_butterfly.png" alt=""></div>
+        <h3>Sammler-Karte teilen</h3>
+        <p>Zeig deine schönsten Sticker und deinen Sammelfortschritt als teilbare Karte &ndash; perfekt für den Familienchat.</p>
+      </div>
+      <div class="feat rv">
+        <div class="feat-badge"><img src="assets/av_fox.png" alt=""></div>
+        <h3>Titel &amp; Avatare</h3>
+        <p>Vom Käfer-Kenner bis zur Vogel-Koryphäe: Verdiene dir 20 Titel und schalte 16 Avatare frei.</p>
+      </div>
+      <div class="feat rv">
+        <div class="feat-badge"><img src="assets/trophy_gold.png" alt=""></div>
+        <h3>Erfolge</h3>
+        <p>48 Erfolge warten &ndash; für Nachtfänge, Artenvielfalt, Quiz-Serien und alles dazwischen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section id="trust" style="padding-top:24px">
+  <div class="wrap center">
+    <span class="eyebrow rv">Gut zu wissen</span>
+    <h2 class="rv">Sammeln mit gutem Gewissen.</h2>
+    <div class="trust-grid" style="text-align:left">
+      <div class="trust-card rv">
+        <div class="feat-badge"><img src="assets/camera.png" alt=""></div>
+        <h3>Deine Fotos bleiben deine Fotos.</h3>
+        <p>Alle Aufnahmen und deine komplette Sammlung bleiben lokal auf deinem Gerät gespeichert. Kein Konto-Zwang, kein Foto-Upload in fremde Galerien.</p>
+        <ul>
+          <li>Fotos bleiben auf dem Gerät</li>
+          <li>DSGVO-konform</li>
+          <li>Keine Werbung, keine versteckten Kosten</li>
+        </ul>
+      </div>
+      <div class="trust-card rv">
+        <div class="feat-badge big"><img src="assets/prof_neutral.png" alt=""></div>
+        <h3>Mit Respekt vor der Natur.</h3>
+        <p>Anilex ist Beobachten statt Anfassen: Beim Start erinnert dich die App an die wichtigsten Naturschutz-Regeln &ndash; damit jeder Fang auch für das Tier ein guter Moment ist.</p>
+        <ul>
+          <li>Abstand halten, nicht anlocken oder füttern</li>
+          <li>Nester und Jungtiere in Ruhe lassen</li>
+          <li>Auf den Wegen bleiben, Schutzgebiete respektieren</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section id="cta" style="padding-top:24px">
+  <div class="wrap">
+    <div class="cta-card rv">
+      <span class="cta-stk cs1" aria-hidden="true"><img src="assets/robin.png" alt=""></span>
+      <span class="cta-stk cs2" aria-hidden="true"><img src="assets/fox.png" alt=""></span>
+      <span class="cta-stk cs3" aria-hidden="true"><img src="assets/sticker_kingfisher.png" alt=""></span>
+      <span class="cta-stk cs4" aria-hidden="true"><img src="assets/hedgehog.png" alt=""></span>
+      <div>
+        <h2>Dein erster Fang wartet schon vor der Tür.</h2>
+        <p>Anilex erscheint bald kostenlos im App Store &ndash; auf Deutsch und Englisch, für iPhone ab iOS&nbsp;17.</p>
+        <a class="store-pill" href="#">
+          <img src="assets/camera.png" alt="">
+          <span class="sp-txt"><small>BALD IM</small><strong>App Store</strong></span>
+        </a>
+        <p class="cta-note">Snap them all! Professor Eichhorn zählt auf dich.</p>
+      </div>
+      <img class="cta-prof" src="assets/prof_happy.png" alt="Professor Eichhorn springt vor Freude in die Luft">
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <img src="assets/logo.png" alt="ANILEX">
+      <span>&copy; 2026 Anilex</span>
+    </div>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="mailto:gurillaztv@googlemail.com?subject=Anilex%20Support">Support</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Scroll-Reveal */
+  var els = document.querySelectorAll('.rv');
+  if (reduced || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Typewriter in der Professor-Sprechblase */
+  var tw = document.getElementById('typewriter');
+  if (tw && !reduced) {
+    var full = tw.textContent;
+    var i = 0, dir = 1;
+    tw.textContent = '';
+    function tick(){
+      if (dir === 1) {
+        i++;
+        tw.textContent = full.slice(0, i);
+        if (i >= full.length) { dir = 0; setTimeout(tick, 3200); return; }
+        setTimeout(tick, 46);
+      } else {
+        tw.textContent = '';
+        i = 0; dir = 1;
+        setTimeout(tick, 400);
+      }
+    }
+    setTimeout(tick, 600);
+  }
+})();
+</script>
+</body>
+</html>

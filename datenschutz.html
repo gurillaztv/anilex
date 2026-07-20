@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung &ndash; ANILEX</title>
+<meta name="description" content="Datenschutzerklärung der App ANILEX: Welche Daten wir verarbeiten, wie die Tiererkennung funktioniert und welche Rechte Sie haben.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="assets/camera.png">
+<link rel="apple-touch-icon" href="assets/camera.png">
+<style>
+  :root{
+    --ink:#111614;
+    --muted:#5b655e;
+    --green:#2f7d46;
+    --green-dark:#245f36;
+    --green-soft:#e9f3ec;
+    --gold:#d4a017;
+    --gold-soft:#faf3de;
+    --paper:#ffffff;
+    --grey:#f5f6f3;
+    --line:#e6e9e4;
+    --round:'Arial Rounded MT Bold','SF Pro Rounded',ui-rounded,-apple-system,'Segoe UI',sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--grey);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:var(--green);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,.rounded{font-family:var(--round);letter-spacing:-.01em;color:var(--ink)}
+
+  /* ===== NAV ===== */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-logo img{height:40px;width:auto}
+  .nav-back{font-family:var(--round);font-size:.85rem;color:var(--muted);white-space:nowrap}
+  .nav-back:hover{color:var(--ink);text-decoration:none}
+
+  /* ===== LEGAL BODY ===== */
+  main.legal{padding:52px 24px 80px}
+  .legal-wrap{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(26px,5vw,58px);box-shadow:0 20px 50px rgba(17,22,20,.05)}
+  .eyebrow{display:inline-block;font-family:var(--round);font-size:.8rem;color:var(--green);background:var(--green-soft);padding:6px 16px;border-radius:999px;margin-bottom:18px}
+  .legal-wrap h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.1;margin-bottom:12px}
+  .stand{color:var(--muted);font-size:.95rem;margin-bottom:6px}
+  .intro{color:var(--muted);font-size:1.02rem;margin:16px 0 4px}
+  .legal-wrap h2{font-size:clamp(1.2rem,3vw,1.5rem);line-height:1.25;margin:44px 0 14px;scroll-margin-top:80px}
+  .legal-wrap h2 .num{color:var(--green);margin-right:.4em}
+  .legal-wrap h3{font-size:1.05rem;margin:22px 0 8px;color:var(--green-dark)}
+  .legal-wrap p{margin-bottom:14px;color:#26312c}
+  .legal-wrap ul,.legal-wrap ol{margin:0 0 16px 0;padding:0;list-style:none}
+  .legal-wrap li{position:relative;padding-left:26px;margin-bottom:9px;color:#26312c}
+  .legal-wrap li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .legal-wrap strong{color:var(--ink)}
+  hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+
+  .callout{background:var(--green-soft);border:1px solid rgba(47,125,70,.2);border-radius:16px;padding:22px 24px;margin:8px 0 18px}
+  .callout.gold{background:var(--gold-soft);border-color:#eeddab}
+  .callout .addr{font-family:var(--round);font-size:1.05rem;line-height:1.55;color:var(--ink)}
+  .callout p{margin-bottom:6px}
+  .callout p:last-child{margin-bottom:0}
+
+  /* ===== TOC ===== */
+  .toc{background:var(--grey);border:1px solid var(--line);border-radius:18px;padding:22px 26px;margin:26px 0 6px}
+  .toc h2{font-family:var(--round);font-size:1.05rem;margin:0 0 14px;color:var(--ink)}
+  .toc ol{list-style:none;counter-reset:toc;margin:0;padding:0;columns:2;column-gap:32px}
+  .toc li{counter-increment:toc;position:relative;padding-left:30px;margin-bottom:9px;break-inside:avoid;color:#26312c;font-size:.95rem}
+  .toc li::before{content:counter(toc) ".";position:absolute;left:0;top:0;font-family:var(--round);font-size:.85rem;color:var(--green);background:none;width:auto;height:auto;border-radius:0}
+  .toc a{color:#26312c}
+  .toc a:hover{color:var(--green)}
+  @media(max-width:560px){ .toc ol{columns:1} }
+
+  /* ===== FOOTER ===== */
+  footer{border-top:1px solid var(--line);background:var(--paper);padding:34px 24px 46px;color:var(--muted);font-size:.9rem}
+  .foot-inner{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand img{height:30px;width:auto}
+  .foot-links{display:flex;flex-wrap:wrap;gap:14px 24px;font-weight:600}
+  .foot-links a{color:var(--muted)}
+  .foot-links a:hover{color:var(--ink);text-decoration:none}
+  .foot-links a[aria-current="page"]{color:var(--green)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html" aria-label="Zur Anilex Startseite">
+      <img src="assets/logo.png" alt="ANILEX – Snap them all">
+    </a>
+    <a class="nav-back" href="index.html">&larr; Zur Startseite</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="legal-wrap">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Datenschutzerklärung</h1>
+    <p class="stand">Stand: Juli 2026</p>
+    <p class="intro">Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. ANILEX ist bewusst datensparsam gebaut: Es gibt kein Nutzerkonto, und der weitaus größte Teil Ihrer Daten verlässt Ihr Gerät nie. Nachfolgend informieren wir Sie darüber, welche Daten bei der Nutzung der App verarbeitet werden und welche Rechte Ihnen zustehen.</p>
+
+    <div class="toc" aria-label="Inhaltsverzeichnis">
+      <h2>Inhalt</h2>
+      <ol>
+        <li><a href="#verantwortlicher">Verantwortlicher und Kontakt</a></li>
+        <li><a href="#grundprinzip">Grundprinzip: kein Konto, weitgehend lokal</a></li>
+        <li><a href="#lokal">Lokal auf dem Gerät gespeicherte Daten</a></li>
+        <li><a href="#tiererkennung">Tiererkennung per Foto</a></li>
+        <li><a href="#drittland">Datenübermittlung in die USA (Google)</a></li>
+        <li><a href="#fotos">Fotos und Sticker bleiben lokal</a></li>
+        <li><a href="#standort">Standortdaten (optional)</a></li>
+        <li><a href="#berechtigungen">Geräteberechtigungen</a></li>
+        <li><a href="#mitteilungen">Mitteilungen</a></li>
+        <li><a href="#artkatalog">Artkatalog vom Server</a></li>
+        <li><a href="#kein-tracking">Kein Tracking, keine Werbung, kein Datenverkauf</a></li>
+        <li><a href="#speicherdauer">Speicherdauer und Löschung</a></li>
+        <li><a href="#rechte">Ihre Rechte als betroffene Person</a></li>
+        <li><a href="#beschwerde">Beschwerderecht bei einer Aufsichtsbehörde</a></li>
+        <li><a href="#kinder">Kinder und Familien</a></li>
+        <li><a href="#aenderungen">Änderungen dieser Datenschutzerklärung</a></li>
+      </ol>
+    </div>
+
+    <h2 id="verantwortlicher"><span class="num">1.</span>Verantwortlicher und Kontakt</h2>
+    <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze ist:</p>
+    <div class="callout">
+      <p class="addr">Philip Mauersberger<br>
+      Neurottstraße 6a<br>
+      68775 Ketsch<br>
+      Deutschland</p>
+      <p>E-Mail: <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a></p>
+    </div>
+    <p>Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte können Sie sich jederzeit an die oben genannte Adresse wenden. Ein Datenschutzbeauftragter ist gesetzlich nicht bestellt.</p>
+
+    <h2 id="grundprinzip"><span class="num">2.</span>Grundprinzip: kein Konto, weitgehend lokal</h2>
+    <p>ANILEX benötigt <strong>kein Nutzerkonto, keinen Login und keine Registrierung</strong>. Sie können die App nutzen, ohne uns Namen, E-Mail-Adresse oder ein Passwort mitzuteilen.</p>
+    <p>Der beim Onboarding eingegebene Spitzname wird <strong>ausschließlich lokal auf Ihrem Gerät</strong> gespeichert. Es wird kein Serverkonto und kein Nutzerprofil bei uns angelegt. Der Spitzname dient allein der persönlichen Ansprache innerhalb der App auf Ihrem Gerät.</p>
+    <p>Personenbezogene Daten verlassen Ihr Gerät nur in dem einen, unter Ziffer 4 beschriebenen Fall der Tiererkennung &ndash; und auch dort ohne Namen, Standort oder Kennungen.</p>
+
+    <h2 id="lokal"><span class="num">3.</span>Lokal auf dem Gerät gespeicherte Daten</h2>
+    <p>Ihr Spielstand und Ihre Einstellungen werden lokal im Gerätespeicher (über die Betriebssystem-Speicher &bdquo;AsyncStorage&ldquo;) sowie im App-eigenen Dokumentenordner abgelegt. Dazu gehören insbesondere:</p>
+    <ul>
+      <li>Spitzname und ausgewählter Avatar</li>
+      <li>Ihre Fänge (erkannte Arten) einschließlich der lokal gespeicherten Koordinaten der Fundorte</li>
+      <li>Erfahrungspunkte (XP), Serien (&bdquo;Streaks&ldquo;), Erfolge und Titel</li>
+      <li>Quiz-Fortschritt</li>
+      <li>App-Einstellungen (z.&nbsp;B. Sprache, Mitteilungen)</li>
+    </ul>
+    <p>Diese Daten liegen ausschließlich auf Ihrem Gerät. Wir haben darauf keinen Zugriff. Rechtsgrundlage für die lokale Speicherung ist Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen angeforderten App-Funktionen).</p>
+
+    <h2 id="tiererkennung"><span class="num">4.</span>Tiererkennung per Foto</h2>
+    <p>Die zentrale Funktion der App ist die KI-gestützte Erkennung der Tierart auf einem von Ihnen aufgenommenen Foto. Dieser Vorgang läuft wie folgt ab:</p>
+    <ul>
+      <li>Wenn Sie ein Tier fotografieren, wird eine <strong>verkleinerte Kopie des Fotos</strong> (maximal 768&nbsp;Pixel Kantenlänge, Format JPEG) an unsere eigene Serverfunktion gesendet. Diese wird bei der Supabase Inc. betrieben; der Serverstandort liegt in der EU (Frankfurt, AWS-Region eu-central-1).</li>
+      <li>Unsere Serverfunktion leitet das Bild zur reinen Arterkennung an die KI-Schnittstelle <strong>Google Gemini API</strong> weiter (Anbieter: Google Ireland Ltd., Irland, bzw. Google LLC, USA).</li>
+      <li>Das Bild wird dabei nur <strong>vorübergehend zur Verarbeitung</strong> genutzt und <strong>nicht dauerhaft auf unseren Servern gespeichert</strong>.</li>
+      <li>Mitgesendet werden ausschließlich das verkleinerte Bild, der Dateityp und Ihre Spracheinstellung (&bdquo;de&ldquo; oder &bdquo;en&ldquo;). Es werden <strong>kein Name, kein Standort und keine Geräte- oder Nutzerkennung</strong> übertragen.</li>
+    </ul>
+    <p>Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Erbringung der von Ihnen angeforderten Kernfunktion der App) sowie hilfsweise Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse an der Bereitstellung einer funktionierenden, verlässlichen Arterkennung). Auf dem übermittelten Foto können, je nach Motiv, personenbezogene Daten enthalten sein; wir empfehlen daher, keine Personen mitzufotografieren.</p>
+    <p>Weitere Informationen zur Datenverarbeitung durch unsere Dienstleister finden Sie in deren Datenschutzhinweisen:</p>
+    <ul>
+      <li>Supabase: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></li>
+      <li>Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
+    </ul>
+
+    <h2 id="drittland"><span class="num">5.</span>Datenübermittlung in die USA (Google)</h2>
+    <p>Im Rahmen der unter Ziffer 4 beschriebenen Arterkennung kann das verkleinerte Foto durch Google auch außerhalb der Europäischen Union, insbesondere in den <strong>USA</strong>, verarbeitet werden. Die USA gelten datenschutzrechtlich als Drittland ohne generell gleichwertiges Datenschutzniveau.</p>
+    <p>Für diese Übermittlung bestehen geeignete Garantien im Sinne der Art. 44&nbsp;ff. DSGVO: Google ist unter dem <strong>EU-US Data Privacy Framework</strong> zertifiziert (Angemessenheitsbeschluss der EU-Kommission), und ergänzend kommen die von der EU-Kommission erlassenen <strong>Standardvertragsklauseln (SCC)</strong> zur Anwendung. Trotz dieser Garantien lässt sich nicht vollständig ausschließen, dass US-Behörden auf übermittelte Daten zugreifen. Da wir bewusst weder Namen, Standort noch Kennungen mit übertragen, beschränkt sich die Übermittlung auf das verkleinerte Bild.</p>
+
+    <h2 id="fotos"><span class="num">6.</span>Fotos und Sticker bleiben lokal</h2>
+    <p>Das <strong>Originalfoto</strong> und der daraus erzeugte <strong>Foto-Sticker</strong> werden ausschließlich im lokalen App-Speicher Ihres Geräts abgelegt. Es gibt <strong>keinen Upload in eine Cloud-Fotogalerie und keine Synchronisierung</strong> mit unseren oder fremden Servern.</p>
+    <p>Das Freistellen des Tieres (das Ausschneiden aus dem Hintergrund) erfolgt <strong>direkt auf Ihrem Gerät</strong> über die Bildanalyse-Funktionen des Betriebssystems (Apple Vision, ab iOS&nbsp;17). Dabei werden keine Daten an uns oder Dritte übertragen.</p>
+
+    <h2 id="standort"><span class="num">7.</span>Standortdaten (optional)</h2>
+    <p>Nur wenn Sie es ausdrücklich erlauben, ermittelt die App Ihren <strong>groben Standort</strong>, um Fundorte zu benennen und Ihre Fänge auf einer persönlichen Karte anzuzeigen. Die Umwandlung der Koordinaten in einen Ortsnamen erfolgt über den <strong>Systemdienst des Betriebssystems (Apple)</strong>.</p>
+    <p>Standortdaten werden <strong>nur lokal auf Ihrem Gerät gespeichert</strong> und <strong>nicht an unsere Server und nicht an Google übermittelt</strong>. Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, die Sie jederzeit in den Einstellungen Ihres Geräts widerrufen können. Die App funktioniert auch <strong>ohne Standortfreigabe</strong> in vollem Umfang &ndash; lediglich die Kartendarstellung der Fundorte steht dann nicht zur Verfügung.</p>
+
+    <h2 id="berechtigungen"><span class="num">8.</span>Geräteberechtigungen</h2>
+    <p>Die App fragt nur die Berechtigungen ab, die für die jeweilige Funktion erforderlich sind:</p>
+    <ul>
+      <li><strong>Kamera:</strong> für das Fotografieren (den &bdquo;Fang&ldquo;) eines Tieres.</li>
+      <li><strong>Fotomediathek:</strong> nur beim optionalen Export eines Fangs in die Fotos-App Ihres Geräts.</li>
+      <li><strong>Standort:</strong> optional, siehe Ziffer 7.</li>
+    </ul>
+    <p>Sie können jede dieser Berechtigungen in den Einstellungen Ihres Geräts jederzeit erteilen oder widerrufen.</p>
+
+    <h2 id="mitteilungen"><span class="num">9.</span>Mitteilungen</h2>
+    <p>Sofern Sie Mitteilungen aktivieren, handelt es sich ausschließlich um <strong>lokale Erinnerungen</strong>, die auf Ihrem Gerät erzeugt werden. Es kommt <strong>kein Push-Server zum Einsatz, und es wird kein Push-Token</strong> erhoben oder an uns übermittelt.</p>
+
+    <h2 id="artkatalog"><span class="num">10.</span>Artkatalog vom Server</h2>
+    <p>Beim Start lädt die App die öffentliche Artenliste (den Artkatalog) von unserem Server (Supabase, Serverstandort EU). Dabei werden <strong>keine personenbezogenen Daten übertragen</strong>; es handelt sich um einen reinen Abruf öffentlicher Katalogdaten. Technisch notwendig ist hierbei die Verarbeitung Ihrer IP-Adresse durch den Server, um die Antwort ausliefern zu können. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Bereitstellung der App-Inhalte).</p>
+
+    <h2 id="kein-tracking"><span class="num">11.</span>Kein Tracking, keine Werbung, kein Datenverkauf</h2>
+    <p>ANILEX enthält <strong>keine Werbung</strong> und <strong>keine Tracking- oder Analyse-SDKs</strong>. Es findet <strong>kein Nutzer-Tracking über Apps oder Websites hinweg</strong> statt. Wir <strong>verkaufen keine Daten</strong> und geben keine personenbezogenen Daten zu Werbezwecken weiter. Es werden keine Profile über Sie gebildet.</p>
+
+    <h2 id="speicherdauer"><span class="num">12.</span>Speicherdauer und Löschung</h2>
+    <p>Die für die Arterkennung übermittelten verkleinerten Bilder werden nur für die Dauer der Verarbeitung genutzt und nicht dauerhaft bei uns gespeichert (siehe Ziffer 4).</p>
+    <p>Alle übrigen Daten (Spielstand, Fänge, Fotos, Standortangaben, Einstellungen) liegen lokal auf Ihrem Gerät und verbleiben dort, solange Sie sie nicht löschen. Sie können diese Daten jederzeit selbst entfernen, indem Sie einzelne Fänge in der App löschen oder die App vollständig deinstallieren. Mit der <strong>Deinstallation der App</strong> werden die lokal gespeicherten Daten von Ihrem Gerät entfernt.</p>
+
+    <h2 id="rechte"><span class="num">13.</span>Ihre Rechte als betroffene Person</h2>
+    <p>Nach der DSGVO stehen Ihnen insbesondere folgende Rechte zu:</p>
+    <ul>
+      <li><strong>Auskunft</strong> (Art. 15 DSGVO)</li>
+      <li><strong>Berichtigung</strong> (Art. 16 DSGVO)</li>
+      <li><strong>Löschung</strong> (Art. 17 DSGVO)</li>
+      <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+      <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+      <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+    </ul>
+    <p>Bitte beachten Sie: Da wir <strong>kein Nutzerkonto führen</strong> und die weit überwiegende Mehrheit Ihrer Daten ausschließlich lokal auf Ihrem Gerät liegt, haben wir in der Regel keinen Zugriff auf diese Daten und können sie Ihnen mangels Zuordnung nicht direkt zuordnen oder herausgeben. Sie üben diese Rechte für die lokalen Daten faktisch selbst aus &ndash; durch Einsicht, Änderung oder Löschung in der App bzw. durch Deinstallation. Für Fragen zu den unter Ziffer 4, 5 und 10 beschriebenen Verarbeitungen wenden Sie sich bitte an die unter Ziffer 1 genannte Adresse.</p>
+
+    <h2 id="beschwerde"><span class="num">14.</span>Beschwerderecht bei einer Aufsichtsbehörde</h2>
+    <p>Sie haben unbeschadet anderer Rechtsbehelfe das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt (Art. 77 DSGVO). Zuständig ist unter anderem die Aufsichtsbehörde an unserem Sitz:</p>
+    <div class="callout">
+      <p class="addr">Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br>
+      Lautenschlagerstraße 20<br>
+      70173 Stuttgart<br>
+      Deutschland</p>
+      <p><a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener noreferrer">www.baden-wuerttemberg.datenschutz.de</a></p>
+    </div>
+    <p>Sie können sich auch an die Aufsichtsbehörde Ihres üblichen Aufenthaltsorts oder Arbeitsplatzes wenden.</p>
+
+    <h2 id="kinder"><span class="num">15.</span>Kinder und Familien</h2>
+    <p>ANILEX ist als familienfreundliche App gestaltet (Altersfreigabe 4+) und kommt bewusst ohne Nutzerkonto, ohne Werbung und ohne Tracking aus. Wir bitten Eltern und Erziehungsberechtigte, die Nutzung der App durch Kinder zu begleiten &ndash; insbesondere im Hinblick auf das Fotografieren im Freien und die Einhaltung der Naturschutz-Hinweise. Da bei der Arterkennung ein Foto übermittelt wird (siehe Ziffer 4), sollten Kinder darauf hingewiesen werden, keine Personen zu fotografieren.</p>
+
+    <h2 id="aenderungen"><span class="num">16.</span>Änderungen dieser Datenschutzerklärung</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Funktionen abzubilden. Für Ihren erneuten Besuch bzw. die weitere Nutzung der App gilt dann die jeweils aktuelle Fassung. Den Stand erkennen Sie am Datum oben auf dieser Seite.</p>
+
+    <hr>
+    <p style="color:var(--muted);font-size:.95rem">Bei Fragen zum Datenschutz erreichen Sie uns unter <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img src="assets/logo.png" alt="ANILEX">
+      <span>&copy; 2026 Anilex</span>
+    </div>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="index.html">Startseite</a>
+      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

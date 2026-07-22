@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANILEX – Fang jedes Tier, das du siehst</title>
-<meta name="description" content="Fotografiere ein Tier, lass die KI die Art erkennen und sammle es als Foto-Sticker in deinem persönlichen Index. 784 Arten, Professor Eichhorn, echte seltene Varianten. Für iOS: kostenlos spielbar mit Werbung, werbefrei mit Anilex GOLD.">
+<title>ANILEX – Snap every animal you see</title>
+<meta name="description" content="Photograph an animal, let the AI identify the species and collect it as a photo sticker in your personal index. 784 species, Professor Eichhorn, real rare variants. Free with ads on iOS.">
 <meta property="og:title" content="ANILEX – Snap them all!">
-<meta property="og:description" content="Die Sammel-App für echte Tiere: fotografieren, erkennen lassen, als Foto-Sticker sammeln. 784 Arten. Für iOS: kostenlos mit Werbung, werbefrei mit Anilex GOLD.">
+<meta property="og:description" content="The collecting app for real animals: take a photo, let the AI identify the species, collect it as a photo sticker. 784 species. Free with ads on iOS.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gurillaztv.github.io/anilex/assets/logo.png">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" type="image/png" href="assets/camera.png">
-<link rel="apple-touch-icon" href="assets/camera.png">
+<link rel="icon" type="image/png" href="../assets/camera.png">
+<link rel="apple-touch-icon" href="../assets/camera.png">
 <link rel="alternate" hreflang="de" href="https://gurillaztv.github.io/anilex/index.html">
 <link rel="alternate" hreflang="en" href="https://gurillaztv.github.io/anilex/en/index.html">
 <link rel="alternate" hreflang="x-default" href="https://gurillaztv.github.io/anilex/index.html">
@@ -68,15 +68,15 @@
   .nav-cta:hover{background:#000;transform:scale(1.04);color:#fff}
   @media (max-width:720px){ .nav-links a:not(.nav-cta){display:none} }
 
-  /* ============ SPRACHUMSCHALTER ============ */
+  /* ============ LANGUAGE SWITCHER ============ */
   .lang-switch{display:inline-flex;align-items:center;gap:4px;font-family:var(--round);font-size:.8rem;white-space:nowrap}
   .lang-switch .lang-link{padding:4px 9px;border-radius:999px;color:var(--muted);text-decoration:none;transition:color .15s ease, background .15s ease}
-  /* bleibt auch schmal sichtbar (schlaegt .nav-links a:not(.nav-cta){display:none}) */
+  /* stays visible on narrow screens (beats .nav-links a:not(.nav-cta){display:none}) */
   .nav-links .lang-switch .lang-link{display:inline-block}
   .lang-switch a.lang-link:hover{color:var(--ink);background:var(--grey);text-decoration:none}
   .lang-switch .lang-link.is-active{color:var(--green);background:var(--green-soft);cursor:default}
   .lang-switch .lang-sep{color:var(--muted);opacity:.4}
-  /* schmale Screens: Umschalter kompakter, damit Logo + CTA unverzerrt Platz behalten */
+  /* narrow screens: compact switcher so logo + CTA keep their space undistorted */
   @media (max-width:420px){
     .nav-links{gap:12px}
     .lang-switch{font-size:.75rem;gap:2px}
@@ -477,19 +477,19 @@
 <!-- ================= NAV ================= -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="nav-logo" href="#top" aria-label="Anilex Startseite">
-      <img src="assets/logo.png" alt="ANILEX – Snap them all">
+    <a class="nav-logo" href="#top" aria-label="Anilex home">
+      <img src="../assets/logo.png" alt="ANILEX – Snap them all">
     </a>
-    <nav class="nav-links" aria-label="Hauptnavigation">
-      <a href="#how">So funktioniert&rsquo;s</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#how">How it works</a>
       <a href="#professor">Professor</a>
       <a href="#features">Features</a>
-      <span class="lang-switch" role="group" aria-label="Sprache w&auml;hlen">
-        <span class="lang-link is-active" lang="de" aria-current="true">DE</span>
+      <span class="lang-switch" role="group" aria-label="Select language">
+        <a class="lang-link" href="../index.html" hreflang="de" lang="de">DE</a>
         <span class="lang-sep" aria-hidden="true">|</span>
-        <a class="lang-link" href="en/index.html" hreflang="en" lang="en">EN</a>
+        <span class="lang-link is-active" lang="en" aria-current="true">EN</span>
       </span>
-      <a class="nav-cta" href="#cta">Bald im App Store</a>
+      <a class="nav-cta" href="#cta">Coming soon</a>
     </nav>
   </div>
 </header>
@@ -498,29 +498,29 @@
 <section class="hero" id="top">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <img class="hero-logo" src="assets/logo.png" alt="ANILEX – Snap them all">
-    <h1>Fang jedes Tier,<br>das du <span class="hl">siehst</span>.</h1>
-    <p class="hero-sub">Foto machen, Art erkennen lassen, Sticker einsammeln: Anilex verwandelt jeden Spaziergang in eine Sammel-Expedition &ndash; mit 784 echten Arten direkt vor deiner Haustür.</p>
+    <img class="hero-logo" src="../assets/logo.png" alt="ANILEX – Snap them all">
+    <h1>Snap every<br>animal you <span class="hl">see</span>.</h1>
+    <p class="hero-sub">Take a photo, let the AI name the species, collect the sticker: Anilex turns every walk into a collecting expedition &ndash; with 784 real species right outside your door.</p>
     <a class="store-pill" href="#cta">
-      <img src="assets/camera.png" alt="">
-      <span class="sp-txt"><small>BALD IM</small><strong>App Store</strong></span>
+      <img src="../assets/camera.png" alt="">
+      <span class="sp-txt"><small>COMING SOON TO</small><strong>App&nbsp;Store</strong></span>
     </a>
     <p class="hero-meta">
-      <span>Kostenlos mit Werbung</span><span class="dot">&bull;</span>
-      <span>Deutsch &amp; Englisch</span><span class="dot">&bull;</span>
+      <span>Free with ads &ndash; 20 catches a week</span><span class="dot">&bull;</span>
+      <span>English &amp; German</span><span class="dot">&bull;</span>
       <span>iOS&nbsp;16.4+</span>
     </p>
 
     <div class="hero-stage">
-      <img class="float-sticker fs-fox" src="assets/fox.png" alt="" aria-hidden="true">
-      <img class="float-sticker fs-robin" src="assets/robin.png" alt="" aria-hidden="true">
-      <img class="float-sticker fs-hedgehog" src="assets/hedgehog.png" alt="" aria-hidden="true">
-      <img class="float-sticker fs-squirrel" src="assets/squirrel.png" alt="" aria-hidden="true">
+      <img class="float-sticker fs-fox" src="../assets/fox.png" alt="" aria-hidden="true">
+      <img class="float-sticker fs-robin" src="../assets/robin.png" alt="" aria-hidden="true">
+      <img class="float-sticker fs-hedgehog" src="../assets/hedgehog.png" alt="" aria-hidden="true">
+      <img class="float-sticker fs-squirrel" src="../assets/squirrel.png" alt="" aria-hidden="true">
 
-      <!-- Hero-Phone: echter Index-Screenshot -->
-      <div class="phone phone-shot" role="img" aria-label="Echter App-Screenshot: der Tier-Index mit Zähler 8 von 784, Filter-Pills und Raster aus Foto-Stickern und grauen Silhouetten">
+      <!-- Hero phone: real index screenshot -->
+      <div class="phone phone-shot" role="img" aria-label="Real app screenshot: the animal index with an 8 of 784 counter, filter pills and a grid of photo stickers and gray silhouettes">
         <div class="screen">
-          <img class="shot" src="assets/03_index.png" alt="">
+          <img class="shot" src="../assets/03_index.png" alt="">
         </div>
       </div>
     </div>
@@ -528,13 +528,13 @@
 </section>
 
 <!-- ================= STATS ================= -->
-<section class="stats" aria-label="Zahlen zur App">
+<section class="stats" aria-label="The app in numbers">
   <div class="wrap">
     <div class="stats-inner rv">
-      <div class="stat"><b class="grn">784</b><span>Arten im Index</span></div>
-      <div class="stat"><b>7.000+</b><span>Quiz-Fragen</span></div>
-      <div class="stat"><b class="gold">3&times;&nbsp;XP</b><span>für echte seltene Varianten</span></div>
-      <div class="stat"><b>50</b><span>Erfolge</span></div>
+      <div class="stat"><b class="grn">784</b><span>species in the index</span></div>
+      <div class="stat"><b>7,000+</b><span>quiz questions</span></div>
+      <div class="stat"><b class="gold">3&times;&nbsp;XP</b><span>for real rare variants</span></div>
+      <div class="stat"><b>50</b><span>achievements</span></div>
     </div>
   </div>
 </section>
@@ -544,77 +544,77 @@
   <div class="wrap">
     <div class="how-head rv">
       <div>
-        <span class="eyebrow">So funktioniert&rsquo;s</span>
-        <h2>Von der Begegnung<br>zum Sticker &ndash; in Sekunden.</h2>
+        <span class="eyebrow">How it works</span>
+        <h2>From encounter<br>to sticker &ndash; in seconds.</h2>
       </div>
-      <img src="assets/prof_point.png" alt="Professor Eichhorn zeigt auf die Anleitung">
+      <img src="../assets/prof_point.png" alt="Professor Eichhorn pointing at the instructions">
     </div>
 
-    <!-- STEP 1: FANGEN -->
+    <!-- STEP 1: CATCH -->
     <div class="step rv">
       <div class="step-txt">
-        <span class="step-num">SCHRITT 01</span>
-        <h3>Fangen</h3>
-        <p>Du entdeckst ein Tier, du zückst dein iPhone, du drückst ab. Die KI erkennt die Art in Sekunden &ndash; vom Rotfuchs bis zum Admiral.</p>
+        <span class="step-num">STEP 01</span>
+        <h3>Catch</h3>
+        <p>You spot an animal, you pull out your iPhone, you hit the shutter. The AI identifies the species in seconds &ndash; from the red fox to the red admiral.</p>
         <ul>
-          <li>Erkennt 784 Arten: Säugetiere, Vögel, Insekten, Reptilien, Amphibien, Fische u.&nbsp;v.&nbsp;m.</li>
-          <li>Dein Foto wird automatisch freigestellt, direkt auf deinem iPhone (ab iOS&nbsp;17)</li>
-          <li>Fertig ist dein persönlicher Foto-Sticker</li>
+          <li>Recognizes 784 species: mammals, birds, insects, reptiles, amphibians, fish and many more</li>
+          <li>Your photo is cut out automatically, right on your iPhone (iOS&nbsp;17 or later)</li>
+          <li>And there is your personal photo sticker</li>
         </ul>
       </div>
-      <div class="phone" role="img" aria-label="Animierter Kamera-Sucher: Ein echtes Foto eines Eisvogels auf einem Ast wird gescannt, als Eisvogel mit 97 Prozent erkannt und als freigestellter Foto-Sticker mit 150 XP eingesammelt">
+      <div class="phone" role="img" aria-label="Animated camera viewfinder: a real photo of a kingfisher on a branch is scanned, identified as a kingfisher with 97 percent confidence and collected as a cut-out photo sticker worth 150 XP">
         <div class="screen cam-screen">
           <div class="island"></div>
-          <img class="cam-photo" src="assets/env_kingfisher_photo.jpg" alt="">
-          <div class="cam-top"><span>Tier im Sucher &hellip;</span></div>
+          <img class="cam-photo" src="../assets/env_kingfisher_photo.jpg" alt="">
+          <div class="cam-top"><span>Animal in view &hellip;</span></div>
           <div class="scan-gate">
             <div class="vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
             <div class="scan-line"></div>
           </div>
           <div class="cam-flash"></div>
           <div class="cam-dim"></div>
-          <div class="recog"><b>Eisvogel</b><em>97&nbsp;%</em></div>
-          <img class="cap-sticker" src="assets/sticker_kingfisher.png" alt="">
+          <div class="recog"><b>Kingfisher</b><em>97&nbsp;%</em></div>
+          <img class="cap-sticker" src="../assets/sticker_kingfisher.png" alt="">
           <div class="xp-pop">+150&nbsp;XP</div>
-          <div class="fab" aria-hidden="true"><img src="assets/camera.png" alt=""></div>
+          <div class="fab" aria-hidden="true"><img src="../assets/camera.png" alt=""></div>
         </div>
       </div>
     </div>
 
-    <!-- STEP 2: SAMMELN -->
+    <!-- STEP 2: COLLECT -->
     <div class="step rv">
       <div class="step-txt">
-        <span class="step-num">SCHRITT 02</span>
-        <h3>Sammeln</h3>
-        <p>Jeder Fang bekommt eine eigene Karte mit Seltenheitsstufe von Häufig bis Legendär &ndash; und einem Steckbrief, der dich zum Artenkenner macht.</p>
+        <span class="step-num">STEP 02</span>
+        <h3>Collect</h3>
+        <p>Every catch gets its own card with a rarity level from Common to Legendary &ndash; and a fact file that turns you into a species expert.</p>
         <ul>
-          <li>Nahrung, Lebensraum, Verbreitung, Alter, Größe</li>
-          <li>Seltenheitsstufen: Häufig &rarr; Legendär</li>
-          <li>Echte seltene Varianten wie das schwarze Eichhörnchen bringen 3&times;&nbsp;XP</li>
+          <li>Diet, habitat, range, lifespan, size</li>
+          <li>Rarity levels: Common &rarr; Legendary</li>
+          <li>Real rare variants like the black squirrel earn you 3&times;&nbsp;XP</li>
         </ul>
       </div>
-      <div class="phone phone-shot" role="img" aria-label="Echter App-Screenshot: Detailkarte des Rotfuchses mit Foto-Sticker, Seltenheits-Badge und Steckbrief zu Nahrung, Lebensraum und Verbreitung">
+      <div class="phone phone-shot" role="img" aria-label="Real app screenshot: the detail card for the red fox with photo sticker, rarity badge and fact file on diet, habitat and range">
         <div class="screen">
-          <img class="shot" src="assets/04_detail.png" alt="">
+          <img class="shot" src="../assets/04_detail.png" alt="">
         </div>
       </div>
     </div>
 
-    <!-- STEP 3: INDEX FUELLEN -->
+    <!-- STEP 3: FILL THE INDEX -->
     <div class="step rv">
       <div class="step-txt">
-        <span class="step-num">SCHRITT 03</span>
-        <h3>Index füllen</h3>
-        <p>Aus grauen Silhouetten werden nach und nach deine Foto-Sticker. 784 Felder warten &ndash; wie viele schaffst du?</p>
+        <span class="step-num">STEP 03</span>
+        <h3>Fill your index</h3>
+        <p>One by one, gray silhouettes turn into your own photo stickers. 784 slots are waiting &ndash; how many can you fill?</p>
         <ul>
-          <li>Ungefangene Arten als graue Silhouetten mit Sticker-Rahmen</li>
-          <li>Fang-Karte mit Sticker-Pins an deinen Fundorten</li>
-          <li>Teilbare Sammler-Karte für deine Freunde</li>
+          <li>Uncaught species shown as gray silhouettes in a sticker frame</li>
+          <li>Catch map with sticker pins wherever you found them</li>
+          <li>Shareable collector card for your friends</li>
         </ul>
       </div>
-      <div class="phone phone-shot" role="img" aria-label="Echter App-Screenshot: der Filter Entdeckt zeigt alle acht gesammelten Foto-Sticker vom Rotfuchs bis zur Schneeeule">
+      <div class="phone phone-shot" role="img" aria-label="Real app screenshot: the Discovered filter showing all eight collected photo stickers, from the red fox to the snowy owl">
         <div class="screen">
-          <img class="shot" src="assets/03b_entdeckt.png" alt="">
+          <img class="shot" src="../assets/03b_entdeckt.png" alt="">
         </div>
       </div>
     </div>
@@ -626,21 +626,21 @@
   <div class="wrap">
     <div class="prof-grid">
       <div class="prof-img-wrap rv">
-        <img src="assets/prof_wave.png" alt="Professor Eichhorn winkt – ein Eichhörnchen mit goldener Brille, Tweed-Weste und Notizblock">
-        <div class="quiz-phone" role="img" aria-label="Echter App-Screenshot: das Tier-Quiz von Professor Eichhorn mit der Frage Welches Tier ist das?">
-          <img src="assets/06b_quiz.png" alt="">
+        <img src="../assets/prof_wave.png" alt="Professor Eichhorn waving – a squirrel with golden glasses, a tweed waistcoat and a notepad">
+        <div class="quiz-phone" role="img" aria-label="Real app screenshot: Professor Eichhorn’s animal quiz asking which animal is this">
+          <img src="../assets/06b_quiz.png" alt="">
         </div>
       </div>
       <div class="prof-copy rv">
-        <div class="bubble" aria-live="polite"><span id="typewriter">Na, num-num! Bereit für deine erste Mission?</span><span class="caret" aria-hidden="true"></span></div>
-        <span class="eyebrow">Dein Begleiter</span>
-        <h2>Professor Eichhorn kennt jeden Trick.</h2>
-        <p>Der sprechende Professor begleitet dich auf jeder Tour: Er stellt dir tägliche Quests, schickt dich auf Missionsketten, löchert dich mit Quiz-Fragen &ndash; und feiert jeden Fang, als wäre es sein eigener.</p>
+        <div class="bubble" aria-live="polite"><span id="typewriter">Well, num-num! Ready for your first mission?</span><span class="caret" aria-hidden="true"></span></div>
+        <span class="eyebrow">Your companion</span>
+        <h2>Professor Eichhorn knows every trick.</h2>
+        <p>The talking professor joins you on every tour: he sets you daily quests, sends you on mission chains, grills you with quiz questions &ndash; and celebrates every catch as if it were his own.</p>
         <div class="prof-chips">
-          <span>Tägliche Quests</span>
-          <span>Tier-Quiz mit 7.000+ Fragen</span>
-          <span>10 Missionsketten</span>
-          <span>50 Erfolge</span>
+          <span>Daily quests</span>
+          <span>Animal quiz with 7,000+ questions</span>
+          <span>10 mission chains</span>
+          <span>50 achievements</span>
         </div>
       </div>
     </div>
@@ -650,42 +650,42 @@
 <!-- ================= FEATURES ================= -->
 <section id="features">
   <div class="wrap center">
-    <span class="eyebrow rv">Alles drin</span>
-    <h2 class="rv">Mehr als nur ein Foto-Album.</h2>
-    <p class="sec-sub rv">Anilex macht aus deinen Tier-Begegnungen eine echte Sammlung &ndash; mit allem, was das Sammlerherz begehrt.</p>
+    <span class="eyebrow rv">Everything included</span>
+    <h2 class="rv">More than just a photo album.</h2>
+    <p class="sec-sub rv">Anilex turns your animal encounters into a real collection &ndash; with everything a collector’s heart could want.</p>
     <div class="feat-grid" style="text-align:left">
       <div class="feat rv">
-        <div class="feat-badge"><img src="assets/robin.png" alt=""></div>
-        <h3>Fang-Karte</h3>
-        <p>Jeder Fang wird als Sticker-Pin auf deiner Karte verewigt. So siehst du genau, wo du den Eisvogel entdeckt hast.</p>
-        <div class="map-prev"><img src="assets/07_map.png" alt="Echter App-Screenshot der Fang-Karte mit Sticker-Pins auf der Landkarte"></div>
+        <div class="feat-badge"><img src="../assets/robin.png" alt=""></div>
+        <h3>Catch map</h3>
+        <p>Every catch is pinned to your map as a sticker. That way you can see exactly where you spotted that kingfisher.</p>
+        <div class="map-prev"><img src="../assets/07_map.png" alt="Real app screenshot of the catch map with sticker pins on the map"></div>
       </div>
       <div class="feat rare rv">
-        <div class="feat-badge"><img src="assets/sticker_blacksquirrel.png" alt=""></div>
-        <h3>Seltene Varianten</h3>
-        <p>Ein schwarzes Eichhörnchen? Gibt&rsquo;s wirklich &ndash; und bringt dir 3&times;&nbsp;XP. Keine Zufalls-Effekte, nur echte Naturphänomene.</p>
-        <span class="mini">Häufig &rarr; Legendär</span>
+        <div class="feat-badge"><img src="../assets/sticker_blacksquirrel.png" alt=""></div>
+        <h3>Rare variants</h3>
+        <p>A black squirrel? They really exist &ndash; and they earn you 3&times;&nbsp;XP. No random effects, just real natural phenomena.</p>
+        <span class="mini">Common &rarr; Legendary</span>
       </div>
       <div class="feat rv">
-        <div class="feat-badge"><img src="assets/sticker_owl.png" alt=""></div>
-        <h3>Steckbriefe</h3>
-        <p>Nahrung, Lebensraum, Verbreitung, Alter und Größe: Zu jedem Tier gibt&rsquo;s das Wissen gleich dazu.</p>
-        <span class="mini">784 Arten</span>
+        <div class="feat-badge"><img src="../assets/sticker_owl.png" alt=""></div>
+        <h3>Fact files</h3>
+        <p>Diet, habitat, range, lifespan and size: every animal comes with the knowledge included.</p>
+        <span class="mini">784 species</span>
       </div>
       <div class="feat rv">
-        <div class="feat-badge"><img src="assets/tile_expedition.png" alt=""></div>
-        <h3>Raus in die Natur</h3>
-        <p>Dreh deine Tagesrunde oder geh auf große Tour: Auf Expedition misst die App deine Strecke, solange sie geöffnet ist &ndash; die Route bleibt dabei auf deinem Gerät.</p>
+        <div class="feat-badge"><img src="../assets/tile_expedition.png" alt=""></div>
+        <h3>Out into nature</h3>
+        <p>Take your daily loop or head out on a big tour: your route is recorded while the app is open, and your catches add up as you walk. The route stays on your device.</p>
       </div>
       <div class="feat rv">
-        <div class="feat-badge"><img src="assets/sticker_butterfly.png" alt=""></div>
-        <h3>Sammler-Karte teilen</h3>
-        <p>Zeig deine schönsten Sticker und deinen Sammelfortschritt als teilbare Karte &ndash; perfekt für den Familienchat.</p>
+        <div class="feat-badge"><img src="../assets/sticker_butterfly.png" alt=""></div>
+        <h3>Share your collector card</h3>
+        <p>Show off your best stickers and your collection progress as a shareable card &ndash; perfect for the family chat.</p>
       </div>
       <div class="feat rv">
-        <div class="feat-badge"><img src="assets/trophy_gold.png" alt=""></div>
-        <h3>Erfolge</h3>
-        <p>50 Erfolge warten &ndash; für Nachtfänge, Artenvielfalt, Quiz-Serien und alles dazwischen.</p>
+        <div class="feat-badge"><img src="../assets/trophy_gold.png" alt=""></div>
+        <h3>Achievements</h3>
+        <p>50 achievements are waiting &ndash; for species diversity, rare finds, quiz streaks and everything in between.</p>
       </div>
     </div>
   </div>
@@ -694,28 +694,27 @@
 <!-- ================= TRUST ================= -->
 <section id="trust" style="padding-top:24px">
   <div class="wrap center">
-    <span class="eyebrow rv">Gut zu wissen</span>
-    <h2 class="rv">Sammeln mit gutem Gewissen.</h2>
+    <span class="eyebrow rv">Good to know</span>
+    <h2 class="rv">Collecting with a clear conscience.</h2>
     <div class="trust-grid" style="text-align:left">
       <div class="trust-card rv">
-        <div class="feat-badge"><img src="assets/camera.png" alt=""></div>
-        <h3>Deine Sammlung bleibt auf deinem Gerät.</h3>
-        <p>Anilex braucht kein Nutzerkonto &ndash; es gibt nichts, womit sich deine Sammlung mit dir verknüpfen ließe. Ehrlich dazu gehört: Für die Arterkennung geht ein verkleinertes Foto an unsere Serverfunktion in der EU und von dort an Google Gemini.</p>
+        <div class="feat-badge"><img src="../assets/camera.png" alt=""></div>
+        <h3>Your photos stay your photos.</h3>
+        <p>Your shots and your whole collection live on your device. For the species recognition alone, a downscaled copy of the photo goes to our recognition service and on to Google Gemini &ndash; without your name, your location or any identifier, and it is not stored there permanently.</p>
         <ul>
-          <li>Mitgesendet werden nur Bild, Dateityp und Sprache &ndash; kein Name, kein Standort, keine Kennung</li>
-          <li>Das Foto wird dabei nicht gespeichert</li>
-          <li>Originalfotos, Sticker, Fundorte und Strecken bleiben lokal</li>
-          <li>Kostenlos mit Werbung, mit Anilex GOLD komplett werbefrei</li>
+          <li>No account, no registration, no login</li>
+          <li>Originals, stickers and your catch map stay on your device</li>
+          <li>Details in the <a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="trust-card rv">
-        <div class="feat-badge big"><img src="assets/prof_neutral.png" alt=""></div>
-        <h3>Mit Respekt vor der Natur.</h3>
-        <p>Anilex ist Beobachten statt Anfassen: Beim Start erinnert dich die App an die wichtigsten Naturschutz-Regeln &ndash; damit jeder Fang auch für das Tier ein guter Moment ist.</p>
+        <div class="feat-badge big"><img src="../assets/prof_neutral.png" alt=""></div>
+        <h3>With respect for nature.</h3>
+        <p>Anilex is about watching, not touching: on launch the app reminds you of the most important conservation rules &ndash; so that every catch is a good moment for the animal, too.</p>
         <ul>
-          <li>Abstand halten, nicht anlocken oder füttern</li>
-          <li>Nester und Jungtiere in Ruhe lassen</li>
-          <li>Auf den Wegen bleiben, Schutzgebiete respektieren</li>
+          <li>Keep your distance, never lure or feed</li>
+          <li>Leave nests and young animals in peace</li>
+          <li>Stay on the paths, respect protected areas</li>
         </ul>
       </div>
     </div>
@@ -726,20 +725,20 @@
 <section id="cta" style="padding-top:24px">
   <div class="wrap">
     <div class="cta-card rv">
-      <span class="cta-stk cs1" aria-hidden="true"><img src="assets/robin.png" alt=""></span>
-      <span class="cta-stk cs2" aria-hidden="true"><img src="assets/fox.png" alt=""></span>
-      <span class="cta-stk cs3" aria-hidden="true"><img src="assets/sticker_kingfisher.png" alt=""></span>
-      <span class="cta-stk cs4" aria-hidden="true"><img src="assets/hedgehog.png" alt=""></span>
+      <span class="cta-stk cs1" aria-hidden="true"><img src="../assets/robin.png" alt=""></span>
+      <span class="cta-stk cs2" aria-hidden="true"><img src="../assets/fox.png" alt=""></span>
+      <span class="cta-stk cs3" aria-hidden="true"><img src="../assets/sticker_kingfisher.png" alt=""></span>
+      <span class="cta-stk cs4" aria-hidden="true"><img src="../assets/hedgehog.png" alt=""></span>
       <div>
-        <h2>Dein erster Fang wartet schon vor der Tür.</h2>
-        <p>Anilex erscheint bald im App Store: kostenlos spielbar mit Werbung, 20 Fänge pro Woche gratis &ndash; mit Anilex GOLD werbefrei und unbegrenzt. Auf Deutsch und Englisch, für iPhone ab iOS&nbsp;16.4.</p>
-        <a class="store-pill" href="#cta">
-          <img src="assets/camera.png" alt="">
-          <span class="sp-txt"><small>BALD IM</small><strong>App Store</strong></span>
+        <h2>Your first catch is waiting right outside.</h2>
+        <p>Anilex is coming to the App Store soon: free to play, funded by ads, with 20 catches a week. Anilex GOLD lifts the limit and removes the ads. In English and German, for iPhone with iOS&nbsp;16.4 or later.</p>
+        <a class="store-pill" href="#">
+          <img src="../assets/camera.png" alt="">
+          <span class="sp-txt"><small>COMING SOON TO</small><strong>App&nbsp;Store</strong></span>
         </a>
-        <p class="cta-note">Snap them all! Professor Eichhorn zählt auf dich.</p>
+        <p class="cta-note">Snap them all! Professor Eichhorn is counting on you.</p>
       </div>
-      <img class="cta-prof" src="assets/prof_happy.png" alt="Professor Eichhorn springt vor Freude in die Luft">
+      <img class="cta-prof" src="../assets/prof_happy.png" alt="Professor Eichhorn jumping for joy">
     </div>
   </div>
 </section>
@@ -748,15 +747,15 @@
 <footer>
   <div class="wrap foot-inner">
     <div class="foot-brand">
-      <img src="assets/logo.png" alt="ANILEX">
+      <img src="../assets/logo.png" alt="ANILEX">
       <span>&copy; 2026 Anilex</span>
     </div>
-    <nav class="foot-links" aria-label="Rechtliches">
+    <nav class="foot-links" aria-label="Legal">
       <a href="mailto:gurillaztv@googlemail.com?subject=Anilex%20Support">Support</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="en/index.html" hreflang="en" lang="en">English</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="imprint.html">Legal Notice</a>
+      <a href="../index.html" hreflang="de" lang="de">Deutsch</a>
     </nav>
   </div>
 </footer>
@@ -765,7 +764,7 @@
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Scroll-Reveal */
+  /* Scroll reveal */
   var els = document.querySelectorAll('.rv');
   if (reduced || !('IntersectionObserver' in window)) {
     els.forEach(function(el){ el.classList.add('in'); });
@@ -778,7 +777,7 @@
     els.forEach(function(el){ io.observe(el); });
   }
 
-  /* Typewriter in der Professor-Sprechblase */
+  /* Typewriter inside the professor speech bubble */
   var tw = document.getElementById('typewriter');
   if (tw && !reduced) {
     var full = tw.textContent;

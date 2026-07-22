@@ -9,6 +9,9 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="assets/camera.png">
 <link rel="apple-touch-icon" href="assets/camera.png">
+<link rel="alternate" hreflang="de" href="https://gurillaztv.github.io/anilex/datenschutz.html">
+<link rel="alternate" hreflang="en" href="https://gurillaztv.github.io/anilex/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://gurillaztv.github.io/anilex/datenschutz.html">
 <style>
   :root{
     --ink:#111614;
@@ -38,6 +41,22 @@
   .nav-logo img{height:40px;width:auto}
   .nav-back{font-family:var(--round);font-size:.85rem;color:var(--muted);white-space:nowrap}
   .nav-back:hover{color:var(--ink);text-decoration:none}
+  .nav-side{display:flex;align-items:center;gap:16px}
+
+  /* ===== SPRACHUMSCHALTER ===== */
+  .lang-switch{display:inline-flex;align-items:center;gap:4px;font-family:var(--round);font-size:.8rem;white-space:nowrap}
+  .lang-switch .lang-link{padding:4px 9px;border-radius:999px;color:var(--muted);text-decoration:none;transition:color .15s ease, background .15s ease}
+  .lang-switch a.lang-link:hover{color:var(--ink);background:var(--grey);text-decoration:none}
+  .lang-switch .lang-link.is-active{color:var(--green);background:var(--green-soft);cursor:default}
+  .lang-switch .lang-sep{color:var(--muted);opacity:.4}
+  /* schmale Screens: Umschalter kompakter, Zurueck-Link darf umbrechen */
+  @media (max-width:420px){
+    .nav-side{gap:10px}
+    .lang-switch{font-size:.75rem;gap:2px}
+    .lang-switch .lang-link{padding:3px 6px}
+    .nav-back{white-space:normal;text-align:right;line-height:1.3}
+    .nav-logo img{height:auto;max-height:40px}
+  }
 
   /* ===== LEGAL BODY ===== */
   main.legal{padding:52px 24px 80px}
@@ -90,7 +109,14 @@
     <a class="nav-logo" href="index.html" aria-label="Zur Anilex Startseite">
       <img src="assets/logo.png" alt="ANILEX – Snap them all">
     </a>
-    <a class="nav-back" href="index.html">&larr; Zur Startseite</a>
+    <div class="nav-side">
+      <span class="lang-switch" role="group" aria-label="Sprache w&auml;hlen">
+        <span class="lang-link is-active" lang="de" aria-current="true">DE</span>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <a class="lang-link" href="en/privacy.html" hreflang="en" lang="en">EN</a>
+      </span>
+      <a class="nav-back" href="index.html">&larr; Zur Startseite</a>
+    </div>
   </div>
 </header>
 
@@ -110,11 +136,11 @@
         <li><a href="#tiererkennung">Tiererkennung per Foto</a></li>
         <li><a href="#drittland">Datenübermittlung in die USA (Google)</a></li>
         <li><a href="#fotos">Fotos und Sticker bleiben lokal</a></li>
-        <li><a href="#standort">Standortdaten (optional)</a></li>
+        <li><a href="#standort">Standort und Expeditions-Strecke (optional)</a></li>
         <li><a href="#berechtigungen">Geräteberechtigungen</a></li>
         <li><a href="#mitteilungen">Mitteilungen</a></li>
         <li><a href="#artkatalog">Artkatalog vom Server</a></li>
-        <li><a href="#werbung">Werbung (Google AdMob)</a></li>
+        <li><a href="#werbung">Werbung (Google AdMob) und Ihre Einwilligung</a></li>
         <li><a href="#kaeufe">In-App-Käufe (Anilex GOLD)</a></li>
         <li><a href="#kein-tracking">Keine eigene Analyse, kein Datenverkauf</a></li>
         <li><a href="#speicherdauer">Speicherdauer und Löschung</a></li>
@@ -139,7 +165,7 @@
     <h2 id="grundprinzip"><span class="num">2.</span>Grundprinzip: kein Konto, weitgehend lokal</h2>
     <p>ANILEX benötigt <strong>kein Nutzerkonto, keinen Login und keine Registrierung</strong>. Sie können die App nutzen, ohne uns Namen, E-Mail-Adresse oder ein Passwort mitzuteilen.</p>
     <p>Der beim Onboarding eingegebene Spitzname wird <strong>ausschließlich lokal auf Ihrem Gerät</strong> gespeichert. Es wird kein Serverkonto und kein Nutzerprofil bei uns angelegt. Der Spitzname dient allein der persönlichen Ansprache innerhalb der App auf Ihrem Gerät.</p>
-    <p>Personenbezogene Daten verlassen Ihr Gerät nur in den unter Ziffer 4 (Tiererkennung), Ziffer 11 (Werbung) und Ziffer 12 (In-App-Käufe) beschriebenen Fällen. Bei der Tiererkennung werden dabei weder Name noch Standort oder Kennungen mitgesendet.</p>
+    <p>Personenbezogene Daten verlassen Ihr Gerät nur in den unter Ziffer 4 (Tiererkennung), Ziffer 10 (Abruf des Artkatalogs), Ziffer 11 (Werbung) und Ziffer 12 (In-App-Käufe) beschriebenen Fällen. Bei der Tiererkennung werden dabei weder Name noch Standort oder Kennungen mitgesendet. Hinzu kommen <strong>Systemdienste Ihres Geräts</strong>, die nicht wir, sondern das Betriebssystem erbringt &ndash; etwa der Orts- und Kartendienst von Apple (Ziffer 7).</p>
 
     <h2 id="lokal"><span class="num">3.</span>Lokal auf dem Gerät gespeicherte Daten</h2>
     <p>Ihr Spielstand und Ihre Einstellungen werden lokal im Gerätespeicher (über die Betriebssystem-Speicher &bdquo;AsyncStorage&ldquo;) sowie im App-eigenen Dokumentenordner abgelegt. Dazu gehören insbesondere:</p>
@@ -148,6 +174,9 @@
       <li>Ihre Fänge (erkannte Arten) einschließlich der lokal gespeicherten Koordinaten der Fundorte</li>
       <li>Erfahrungspunkte (XP), Serien (&bdquo;Streaks&ldquo;), Erfolge und Titel</li>
       <li>Quiz-Fortschritt</li>
+      <li>Ihre Expeditionen einschließlich der aufgezeichneten Strecke sowie die von Ihnen erkundeten Ranger-Distrikte (Einzelheiten in Ziffer 7)</li>
+      <li>Fortschritt bei Truhen, Sammlerstücken und Sets</li>
+      <li>Ihr GOLD-Status sowie die Zähler für das wöchentliche Gratis-Kontingent und für die Anzeigen-Taktung</li>
       <li>App-Einstellungen (z.&nbsp;B. Sprache, Mitteilungen)</li>
     </ul>
     <p>Diese Daten liegen ausschließlich auf Ihrem Gerät. Wir haben darauf keinen Zugriff. Rechtsgrundlage für die lokale Speicherung ist Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von Ihnen angeforderten App-Funktionen).</p>
@@ -155,7 +184,7 @@
     <h2 id="tiererkennung"><span class="num">4.</span>Tiererkennung per Foto</h2>
     <p>Die zentrale Funktion der App ist die KI-gestützte Erkennung der Tierart auf einem von Ihnen aufgenommenen Foto. Dieser Vorgang läuft wie folgt ab:</p>
     <ul>
-      <li>Wenn Sie ein Tier fotografieren, wird eine <strong>verkleinerte Kopie des Fotos</strong> (maximal 768&nbsp;Pixel Kantenlänge, Format JPEG) an unsere eigene Serverfunktion gesendet. Diese wird bei der Supabase Inc. betrieben; der Serverstandort liegt in der EU (Frankfurt, AWS-Region eu-central-1).</li>
+      <li>Wenn Sie ein Tier fotografieren, wird eine <strong>verkleinerte Kopie des Fotos</strong> (auf 768&nbsp;Pixel Breite heruntergerechnet, komprimiert, Format JPEG) an unsere eigene Serverfunktion gesendet. Diese wird bei der Supabase Inc. betrieben; der Serverstandort liegt in der EU (Frankfurt, AWS-Region eu-central-1).</li>
       <li>Unsere Serverfunktion leitet das Bild zur reinen Arterkennung an die KI-Schnittstelle <strong>Google Gemini API</strong> weiter (Anbieter: Google Ireland Ltd., Irland, bzw. Google LLC, USA).</li>
       <li>Das Bild wird dabei nur <strong>vorübergehend zur Verarbeitung</strong> genutzt und <strong>nicht dauerhaft auf unseren Servern gespeichert</strong>.</li>
       <li>Mitgesendet werden ausschließlich das verkleinerte Bild, der Dateityp und Ihre Spracheinstellung (&bdquo;de&ldquo; oder &bdquo;en&ldquo;). Es werden <strong>kein Name, kein Standort und keine Geräte- oder Nutzerkennung</strong> übertragen.</li>
@@ -175,16 +204,34 @@
     <p>Das <strong>Originalfoto</strong> und der daraus erzeugte <strong>Foto-Sticker</strong> werden ausschließlich im lokalen App-Speicher Ihres Geräts abgelegt. Es gibt <strong>keinen Upload in eine Cloud-Fotogalerie und keine Synchronisierung</strong> mit unseren oder fremden Servern.</p>
     <p>Das Freistellen des Tieres (das Ausschneiden aus dem Hintergrund) erfolgt <strong>direkt auf Ihrem Gerät</strong> über die Bildanalyse-Funktionen des Betriebssystems (Apple Vision, ab iOS&nbsp;17). Dabei werden keine Daten an uns oder Dritte übertragen.</p>
 
-    <h2 id="standort"><span class="num">7.</span>Standortdaten (optional)</h2>
-    <p>Nur wenn Sie es ausdrücklich erlauben, ermittelt die App Ihren <strong>groben Standort</strong>, um Fundorte zu benennen und Ihre Fänge auf einer persönlichen Karte anzuzeigen. Die Umwandlung der Koordinaten in einen Ortsnamen erfolgt über den <strong>Systemdienst des Betriebssystems (Apple)</strong>.</p>
-    <p>Standortdaten werden <strong>nur lokal auf Ihrem Gerät gespeichert</strong> und <strong>nicht an unsere Server und nicht an Google übermittelt</strong>. Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, die Sie jederzeit in den Einstellungen Ihres Geräts widerrufen können. Die App funktioniert auch <strong>ohne Standortfreigabe</strong> in vollem Umfang &ndash; lediglich die Kartendarstellung der Fundorte steht dann nicht zur Verfügung.</p>
+    <h2 id="standort"><span class="num">7.</span>Standort und Expeditions-Strecke (optional)</h2>
+    <p>Nur wenn Sie es ausdrücklich erlauben, greift die App auf den Standort Ihres Geräts zu. Die Ortung erfolgt <strong>ausschließlich während der Nutzung</strong>, also solange die App geöffnet ist; eine Ortung im Hintergrund findet nicht statt. Verwendet wird der Standort für drei Zwecke:</p>
+    <ul>
+      <li><strong>Fundort eines Fangs:</strong> Beim Fotografieren wird eine <strong>grobe Position</strong> bestimmt und zusammen mit dem Fang gespeichert, damit Ihre Funde einen Ortsnamen erhalten und auf Ihrer persönlichen Karte erscheinen.</li>
+      <li><strong>Ranger-Distrikt:</strong> Aus derselben groben Position wird der Name Ihrer Umgebung ermittelt, um das Gebiet freizuschalten, in dem Sie gerade unterwegs sind.</li>
+      <li><strong>Expedition:</strong> Solange der Expeditions-Bildschirm geöffnet ist, misst die App die zurückgelegte Strecke. Dafür ist eine <strong>genauere Ortung</strong> erforderlich als für die beiden vorgenannten Zwecke.</li>
+    </ul>
+    <p>Die Umwandlung der Koordinaten in einen Ortsnamen erfolgt über den <strong>Systemdienst des Betriebssystems (Apple)</strong>. Auch das Kartenmaterial für die Fundkarte, die Distrikt-Karte und die Streckenanzeige stammt vom <strong>Kartendienst des Betriebssystems (Apple Karten)</strong> &ndash; ein Kartendienst von Google wird nicht eingebunden. Apple verarbeitet dabei als eigener Verantwortlicher die Angaben, die technisch nötig sind, um den angeforderten Kartenausschnitt auszuliefern. Wir erhalten davon nichts.</p>
+
+    <h3>Aufzeichnung der zurückgelegten Strecke</h3>
+    <p>Bei einer Expedition speichert die App nicht nur die gelaufene Gesamtstrecke, sondern den Weg als <strong>Liste einzelner Wegpunkte</strong> (jeweils Breiten- und Längengrad). Daraus entsteht die Streckenlinie, die Ihnen am Ende der Expedition auf der Karte gezeigt wird. Damit entsteht auf Ihrem Gerät ein <strong>Bewegungsverlauf</strong>. Wir benennen das hier ausdrücklich, auch wenn diese Daten das Gerät nicht verlassen:</p>
+    <ul>
+      <li>Aufgezeichnet wird <strong>nur während einer laufenden Expedition</strong> und <strong>nur bei geöffnetem Expeditions-Bildschirm</strong>. Schließen Sie ihn oder legen Sie die App weg, endet die Aufzeichnung.</li>
+      <li>Ein neuer Wegpunkt kommt höchstens etwa alle acht Meter beziehungsweise alle drei Sekunden hinzu; für die laufende Expedition werden höchstens die jüngsten 1.500 Punkte behalten.</li>
+      <li>Abgeschlossene Expeditionen bleiben mit ihrer Strecke in einer Liste der <strong>letzten 30 Expeditionen</strong> auf dem Gerät. Ältere Einträge fallen automatisch heraus.</li>
+      <li>Die Strecke wird <strong>ausschließlich lokal</strong> gespeichert und <strong>weder an unsere Server noch an Google oder sonstige Dritte übertragen</strong>.</li>
+    </ul>
+    <p>Das gilt für alle Standortdaten gleichermaßen: Fundorte wie Streckenpunkte werden <strong>nur lokal auf Ihrem Gerät gespeichert</strong> und <strong>nicht an unsere Server und nicht an Google übermittelt</strong>. Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, die Sie jederzeit in den Einstellungen Ihres Geräts widerrufen können.</p>
+    <p><strong>Ohne Standortfreigabe</strong> können Sie Tiere weiterhin uneingeschränkt fotografieren, bestimmen und sammeln &ndash; die Kernfunktion der App bleibt vollständig nutzbar. Nicht zur Verfügung stehen dann die Funktionen, die auf den Standort angewiesen sind: die Angabe des Fundorts und die Karte Ihrer Fänge, die Ranger-Distrikte sowie die Expeditionen mit Streckenmessung.</p>
 
     <h2 id="berechtigungen"><span class="num">8.</span>Geräteberechtigungen</h2>
     <p>Die App fragt nur die Berechtigungen ab, die für die jeweilige Funktion erforderlich sind:</p>
     <ul>
       <li><strong>Kamera:</strong> für das Fotografieren (den &bdquo;Fang&ldquo;) eines Tieres.</li>
       <li><strong>Fotomediathek:</strong> nur beim optionalen Export eines Fangs in die Fotos-App Ihres Geräts.</li>
-      <li><strong>Standort:</strong> optional, siehe Ziffer 7.</li>
+      <li><strong>Standort:</strong> optional und nur während der Nutzung, siehe Ziffer 7.</li>
+      <li><strong>Mitteilungen:</strong> optional, nur wenn Sie die Erinnerungen einschalten, siehe Ziffer 9.</li>
+      <li><strong>Tracking (App-Tracking-Transparenz):</strong> nur in der kostenlosen Version und ausschließlich für die Personalisierung der Werbung, siehe Ziffer 11.</li>
     </ul>
     <p>Sie können jede dieser Berechtigungen in den Einstellungen Ihres Geräts jederzeit erteilen oder widerrufen.</p>
 
@@ -194,14 +241,14 @@
     <h2 id="artkatalog"><span class="num">10.</span>Artkatalog vom Server</h2>
     <p>Beim Start lädt die App die öffentliche Artenliste (den Artkatalog) von unserem Server (Supabase, Serverstandort EU). Dabei werden <strong>keine personenbezogenen Daten übertragen</strong>; es handelt sich um einen reinen Abruf öffentlicher Katalogdaten. Technisch notwendig ist hierbei die Verarbeitung Ihrer IP-Adresse durch den Server, um die Antwort ausliefern zu können. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Bereitstellung der App-Inhalte).</p>
 
-    <h2 id="werbung"><span class="num">11.</span>Werbung (Google AdMob)</h2>
+    <h2 id="werbung"><span class="num">11.</span>Werbung (Google AdMob) und Ihre Einwilligung</h2>
     <p>ANILEX ist kostenlos nutzbar und finanziert sich in der kostenlosen Version über Werbung. Als Werbenetzwerk setzen wir <strong>Google AdMob</strong> ein. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; je nach Aufenthaltsort kann die Verarbeitung auch durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA erfolgen.</p>
     <p>Es werden zwei Anzeigenformen ausgespielt:</p>
     <ul>
       <li><strong>Bildschirmfüllende Anzeigen (Interstitial):</strong> Sie erscheinen automatisch, nachdem Sie eine bestimmte Anzahl von Tieren gefangen haben.</li>
       <li><strong>Belohnte Videoanzeigen (Rewarded):</strong> Sie starten nur, wenn Sie sie ausdrücklich selbst auswählen, und schalten im Gegenzug zusätzliche Fänge für die laufende Woche frei.</li>
     </ul>
-    <p>Wenn Sie einen der unter Ziffer 12 beschriebenen Käufe (&bdquo;Anilex GOLD&ldquo;) getätigt haben, werden Ihnen <strong>keine Anzeigen ausgespielt</strong>. In diesem Fall wird das Werbe-SDK von Google beim Start der App auch nicht mehr geladen oder initialisiert; es werden dann keine Anzeigen angefordert und keine Daten an Google übermittelt.</p>
+    <p>Wenn Sie einen der unter Ziffer 12 beschriebenen Käufe (&bdquo;Anilex GOLD&ldquo;) getätigt haben, werden Ihnen <strong>keine Anzeigen ausgespielt</strong>. In diesem Fall wird das Werbe-SDK von Google beim Start der App auch nicht mehr geladen oder initialisiert; es werden dann keine Anzeigen angefordert und keine Daten an Google übermittelt. Auch die unten beschriebenen Abfragen (Einwilligungs-Dialog und Tracking-Abfrage) erscheinen dann nicht.</p>
 
     <h3>Welche Daten dabei verarbeitet werden</h3>
     <p>Für die Auslieferung, die Betrugsvermeidung und die Abrechnung der Anzeigen verarbeitet Google nach eigenen Angaben insbesondere:</p>
@@ -211,25 +258,31 @@
       <li>technische Angaben zu Gerät, Betriebssystem, Spracheinstellung und App-Version;</li>
       <li>Ihre <strong>Interaktion mit den Anzeigen</strong> &ndash; ob eine Anzeige ausgeliefert und gesehen wurde, ob Sie sie angetippt haben und ob eine belohnte Videoanzeige zu Ende gesehen wurde.</li>
     </ul>
-    <p>Wir selbst erhalten diese Angaben nicht personenbezogen, sondern von Google lediglich zusammengefasste Auswertungen (etwa die Anzahl ausgelieferter Anzeigen und die daraus erzielten Einnahmen). Die Anzeigeninhalte wählt Google aus; wir haben darauf keinen unmittelbaren Einfluss. Für die Anzeigen ist in der App eine Beschränkung der Inhalte auf die Altersfreigabe &bdquo;PG&ldquo; eingestellt.</p>
+    <p>Wir selbst erhalten diese Angaben nicht personenbezogen, sondern von Google lediglich zusammengefasste Auswertungen (etwa die Anzahl ausgelieferter Anzeigen und die daraus erzielten Einnahmen). Die Anzeigeninhalte wählt Google aus; wir haben darauf keinen unmittelbaren Einfluss. Für die Anzeigeninhalte ist in der App die <strong>strengste Alterseinstufung &bdquo;G&ldquo;</strong> (&bdquo;für alle Altersgruppen geeignet&ldquo;) hinterlegt; sie entspricht der Altersfreigabe der App selbst.</p>
 
-    <h3>App-Tracking-Transparenz (ATT) und personalisierte Werbung</h3>
-    <p>Bevor das Werbe-SDK gestartet wird, zeigt die App unter iOS die von Apple vorgegebene <strong>Abfrage zur App-Tracking-Transparenz (ATT)</strong>. Sie entscheiden dort, ob ANILEX Ihre Aktivitäten in Apps und auf Websites anderer Anbieter verfolgen darf.</p>
+    <h3>Ihre Einwilligung: Einwilligungs-Dialog und Tracking-Abfrage</h3>
+    <p>Bevor das Werbe-SDK überhaupt gestartet wird, fragt die App Sie in <strong>zwei aufeinanderfolgenden Schritten</strong>, ob Sie personalisierte Werbung zulassen möchten. Beide Abfragen liegen zeitlich vor der ersten Anzeige:</p>
+    <ol>
+      <li><strong>Einwilligungs-Dialog von Google (&bdquo;User Messaging Platform&ldquo;, UMP):</strong> Zuerst erscheint der Einwilligungs-Dialog von Google. Dort können Sie der Verarbeitung Ihrer Daten für personalisierte Werbung <strong>zustimmen oder sie ablehnen</strong>. Google blendet den Dialog nur dort ein, wo er erforderlich ist &ndash; insbesondere in der EU, im EWR und im Vereinigten Königreich &ndash; und nur so lange, wie Sie ihn noch nicht beantwortet haben. Ist die Abfrage einmal beantwortet, erscheint sie beim nächsten Start nicht erneut.</li>
+      <li><strong>Abfrage zur App-Tracking-Transparenz (ATT):</strong> Anschließend zeigt iOS die von Apple vorgegebene Abfrage, ob ANILEX Ihre Aktivitäten in Apps und auf Websites anderer Anbieter verfolgen darf. Auch sie erscheint nur, solange Sie sie noch nicht beantwortet haben.</li>
+    </ol>
+    <p>Erst danach wird das Werbe-SDK von Google gestartet. Schlägt der Einwilligungs-Dialog technisch fehl, wird <strong>keine Einwilligung unterstellt</strong>; Google liefert dann von sich aus nicht personalisierte Werbung aus.</p>
     <ul>
-      <li><strong>Wenn Sie zustimmen:</strong> Google darf den Werbe-Identifier Ihres Geräts verwenden und Ihnen <strong>personalisierte Werbung</strong> ausspielen. Google kann dabei Daten aus verschiedenen Apps und Websites zusammenführen und daraus Interessenprofile zu Werbezwecken bilden.</li>
-      <li><strong>Wenn Sie ablehnen oder nicht antworten:</strong> Der Werbe-Identifier wird nicht bereitgestellt. Sie sehen dann <strong>nicht personalisierte Werbung</strong>, die sich im Wesentlichen an der aktuellen Situation orientiert. Auch in diesem Fall werden für die Auslieferung, die Betrugsvermeidung und die Abrechnung technische Daten wie IP-Adresse, Gerätedaten und Anzeigen-Interaktionen verarbeitet &ndash; eine Anzeigenauslieferung ganz ohne Datenverarbeitung ist technisch nicht möglich.</li>
+      <li><strong>Wenn Sie zustimmen</strong> (Einwilligungs-Dialog <em>und</em> Tracking-Abfrage): Google darf den Werbe-Identifier Ihres Geräts verwenden und Ihnen <strong>personalisierte Werbung</strong> ausspielen. Google kann dabei Daten aus verschiedenen Apps und Websites zusammenführen und daraus Interessenprofile zu Werbezwecken bilden.</li>
+      <li><strong>Wenn Sie ablehnen oder nicht antworten</strong> &ndash; bei einer der beiden Abfragen oder bei beiden: Sie bekommen weiterhin Werbung zu sehen, aber <strong>nicht personalisierte Werbung</strong>, die sich im Wesentlichen an der aktuellen Situation orientiert. Der Werbe-Identifier wird nicht bereitgestellt, und es werden keine Interessenprofile für Sie gebildet. Auch in diesem Fall werden für die Auslieferung, die Betrugsvermeidung und die Abrechnung technische Daten wie IP-Adresse, Gerätedaten und Anzeigen-Interaktionen verarbeitet &ndash; eine Anzeigenauslieferung ganz ohne Datenverarbeitung ist technisch nicht möglich.</li>
     </ul>
-    <p>Eine Ablehnung der ATT-Abfrage schaltet die Werbung <strong>nicht ab</strong>; sie wirkt sich ausschließlich auf die <em>Personalisierung</em> der Anzeigen aus.</p>
+    <p>Bitte beachten Sie: Eine Ablehnung schaltet die Werbung <strong>nicht ab</strong>. Sie wirkt sich ausschließlich auf die <em>Personalisierung</em> der Anzeigen aus. Werbefrei ist die App nur mit einem der unter Ziffer 12 beschriebenen Käufe.</p>
 
     <h3>Rechtsgrundlagen</h3>
     <ul>
-      <li><strong>Personalisierte Werbung</strong> sowie das Speichern von Informationen auf Ihrem Endgerät und der Zugriff darauf zu diesem Zweck: Ihre <strong>Einwilligung</strong> nach Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit &sect;&nbsp;25 Abs. 1 TDDDG, die Sie über die ATT-Abfrage erteilen.</li>
+      <li><strong>Personalisierte Werbung</strong> sowie das Speichern von Informationen auf Ihrem Endgerät und der Zugriff darauf zu diesem Zweck: Ihre <strong>Einwilligung</strong> nach Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit &sect;&nbsp;25 Abs. 1 TDDDG. Sie erteilen sie im <strong>Einwilligungs-Dialog von Google</strong>, der die Zwecke benennt und ablehnbar ist; Apples Tracking-Abfrage tritt als zusätzliche Voraussetzung hinzu. Ohne Zustimmung in beiden Abfragen findet keine Personalisierung statt.</li>
       <li><strong>Nicht personalisierte Werbung</strong> sowie die technische Auslieferung, die Messung auf Anzeigenebene, die Betrugsvermeidung und die Abrechnung: unser <strong>berechtigtes Interesse</strong> an der Finanzierung der kostenlos bereitgestellten App nach Art. 6 Abs. 1 lit. f DSGVO.</li>
     </ul>
 
     <h3>Widerruf und Wahlmöglichkeiten</h3>
     <p>Eine erteilte Einwilligung können Sie <strong>jederzeit mit Wirkung für die Zukunft widerrufen</strong>. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt. Sie haben folgende Möglichkeiten:</p>
     <ul>
+      <li><strong>In der App widerrufen oder ändern:</strong> <em>Einstellungen</em> &rarr; <em>Werbe-Einstellungen ändern</em>. Damit öffnen Sie den Einwilligungs-Dialog von Google erneut und können Ihre Entscheidung ändern oder zurücknehmen. Dieser Eintrag wird nur angezeigt, wenn Google für Sie einen solchen Widerrufsweg vorsieht &ndash; und er entfällt, wenn Sie Anilex GOLD haben, weil dann ohnehin keine Werbung läuft.</li>
       <li><strong>Erlaubnis für ANILEX ändern:</strong> iOS-<em>Einstellungen</em> &rarr; <em>Datenschutz &amp; Sicherheit</em> &rarr; <em>Tracking</em> &rarr; Schalter neben &bdquo;Anilex&ldquo;. Schalten Sie ihn aus, sehen Sie nur noch nicht personalisierte Werbung.</li>
       <li><strong>Tracking für alle Apps unterbinden:</strong> im selben Menü über die Option &bdquo;Apps erlauben, Tracking anzufragen&ldquo;.</li>
       <li><strong>Werbeeinstellungen bei Google</strong> anpassen: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.</li>
@@ -239,7 +292,7 @@
     <p>Einzelheiten zur Verarbeitung durch Google finden Sie in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a> sowie in den Hinweisen zur <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Werbung bei Google</a>. Für eine Verarbeitung außerhalb der Europäischen Union gilt Ziffer 5 entsprechend.</p>
 
     <h2 id="kaeufe"><span class="num">12.</span>In-App-Käufe (Anilex GOLD)</h2>
-    <p>In der App können Sie freiwillig kostenpflichtige Zusatzfunktionen unter dem Namen &bdquo;Anilex GOLD&ldquo; erwerben: zwei automatisch verlängernde Abonnements (wöchentlich und jährlich) sowie einen Einmalkauf. Die vertraglichen Einzelheiten regeln unsere <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>.</p>
+    <p>In der App können Sie freiwillig kostenpflichtige Zusatzfunktionen unter dem Namen &bdquo;Anilex GOLD&ldquo; erwerben: zwei automatisch verlängernde Abonnements (mit einer Laufzeit von einer Woche bzw. von sechs Monaten) sowie einen Einmalkauf. Die vertraglichen Einzelheiten regeln unsere <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>.</p>
     <p>Der Kauf und die gesamte <strong>Zahlungsabwicklung laufen ausschließlich über Apple</strong> (App Store bzw. StoreKit). Dabei gilt:</p>
     <ul>
       <li>Wir erhalten <strong>keine Zahlungsdaten</strong> &ndash; weder Ihren Namen noch Ihre Anschrift, Ihre Apple-ID oder Ihre Bank- und Kreditkartendaten.</li>
@@ -252,11 +305,11 @@
 
     <h2 id="kein-tracking"><span class="num">13.</span>Keine eigene Analyse, kein Datenverkauf</h2>
     <p>Über die unter Ziffer 11 beschriebene Werbung hinaus setzen wir <strong>keine eigenen Analyse-, Statistik- oder Absturzberichts-SDKs</strong> ein. Wir messen nicht, welche Bildschirme Sie öffnen, wie lange Sie spielen oder welche Tiere Sie fangen &ndash; diese Angaben bleiben auf Ihrem Gerät (Ziffer 3).</p>
-    <p>Wir <strong>verkaufen keine Daten</strong>, geben keine personenbezogenen Daten zu eigenen Werbezwecken an Dritte weiter und bilden bei uns keine Nutzerprofile. Eine app- und websiteübergreifende Verfolgung durch unseren Werbepartner Google findet nur statt, wenn Sie ihr in der ATT-Abfrage zugestimmt haben (Ziffer 11).</p>
+    <p>Wir <strong>verkaufen keine Daten</strong>, geben keine personenbezogenen Daten zu eigenen Werbezwecken an Dritte weiter und bilden bei uns keine Nutzerprofile. Eine app- und websiteübergreifende Verfolgung durch unseren Werbepartner Google findet nur statt, wenn Sie ihr zuvor sowohl im Einwilligungs-Dialog von Google als auch in Apples Tracking-Abfrage zugestimmt haben (Ziffer 11).</p>
 
     <h2 id="speicherdauer"><span class="num">14.</span>Speicherdauer und Löschung</h2>
     <p>Die für die Arterkennung übermittelten verkleinerten Bilder werden nur für die Dauer der Verarbeitung genutzt und nicht dauerhaft bei uns gespeichert (siehe Ziffer 4).</p>
-    <p>Alle übrigen Daten (Spielstand, Fänge, Fotos, Standortangaben, Einstellungen) liegen lokal auf Ihrem Gerät und verbleiben dort, solange Sie sie nicht löschen. Sie können diese Daten jederzeit selbst entfernen, indem Sie einzelne Fänge in der App löschen oder die App vollständig deinstallieren. Mit der <strong>Deinstallation der App</strong> werden die lokal gespeicherten Daten von Ihrem Gerät entfernt.</p>
+    <p>Alle übrigen Daten (Spielstand, Fänge, Fotos, Standortangaben, aufgezeichnete Expeditions-Strecken, Einstellungen) liegen lokal auf Ihrem Gerät und verbleiben dort, solange Sie sie nicht löschen. Für die Streckenaufzeichnung gelten zusätzlich die in Ziffer 7 genannten Obergrenzen: Von den abgeschlossenen Expeditionen bleiben nur die letzten 30 erhalten, ältere werden automatisch verworfen. Sie können diese Daten jederzeit selbst entfernen, indem Sie einzelne Fänge in der App löschen oder die App vollständig deinstallieren. Mit der <strong>Deinstallation der App</strong> werden die lokal gespeicherten Daten von Ihrem Gerät entfernt.</p>
     <p>Auf die Speicherdauer der bei der Werbeauslieferung (Ziffer 11) und beim Kauf (Ziffer 12) anfallenden Daten haben wir keinen Einfluss; sie richtet sich nach den Vorgaben von Google beziehungsweise Apple. Beide Unternehmen sind zudem gesetzlich verpflichtet, bestimmte Abrechnungsdaten aufzubewahren.</p>
 
     <h2 id="rechte"><span class="num">15.</span>Ihre Rechte als betroffene Person</h2>
@@ -285,7 +338,7 @@
 
     <h2 id="kinder"><span class="num">17.</span>Kinder und Familien</h2>
     <p>ANILEX ist familienfreundlich gestaltet und kommt ohne Nutzerkonto aus. Die kostenlose Version enthält jedoch <strong>Werbung</strong> (Ziffer 11) und bietet <strong>kostenpflichtige In-App-Käufe</strong> (Ziffer 12). Wir bitten Eltern und Erziehungsberechtigte deshalb, die Nutzung der App durch Kinder zu begleiten.</p>
-    <p>Eine <strong>Einwilligung in personalisierte Werbung</strong> ist nur wirksam, wenn sie von einer einwilligungsfähigen Person erteilt wird; bei Kindern ist hierfür die Zustimmung der Erziehungsberechtigten erforderlich (Art. 8 DSGVO). Wenn Kinder die App nutzen, empfehlen wir, die ATT-Abfrage <strong>abzulehnen</strong> oder Tracking in den Geräteeinstellungen ganz zu unterbinden (siehe Ziffer 11).</p>
+    <p>Eine <strong>Einwilligung in personalisierte Werbung</strong> ist nur wirksam, wenn sie von einer einwilligungsfähigen Person erteilt wird; bei Kindern ist hierfür die Zustimmung der Erziehungsberechtigten erforderlich (Art. 8 DSGVO). Wenn Kinder die App nutzen, empfehlen wir, sowohl den Einwilligungs-Dialog von Google als auch Apples Tracking-Abfrage <strong>abzulehnen</strong> oder Tracking in den Geräteeinstellungen ganz zu unterbinden (siehe Ziffer 11). Eine bereits getroffene Entscheidung lässt sich in der App jederzeit über <em>Einstellungen</em> &rarr; <em>Werbe-Einstellungen ändern</em> korrigieren.</p>
     <p><strong>In-App-Käufe</strong> lassen sich in den iOS-Einstellungen unter <em>Bildschirmzeit</em> &rarr; <em>Beschränkungen</em> sperren oder über die Familienfreigabe mit &bdquo;Kauf anfragen&ldquo; an eine Bestätigung durch die Erziehungsberechtigten binden.</p>
     <p>Bitte weisen Sie Kinder außerdem auf die Sicherheits- und Naturschutz-Hinweise beim Fotografieren im Freien hin. Da bei der Arterkennung ein Foto übermittelt wird (siehe Ziffer 4), sollten Kinder darauf hingewiesen werden, keine Personen zu fotografieren.</p>
 

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy &ndash; ANILEX</title>
+<meta name="description" content="Privacy policy of the ANILEX app: which data we process, how species recognition works, how advertising and in-app purchases work, and what rights you have.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="../assets/camera.png">
+<link rel="apple-touch-icon" href="../assets/camera.png">
+<link rel="alternate" hreflang="de" href="https://gurillaztv.github.io/anilex/datenschutz.html">
+<link rel="alternate" hreflang="en" href="https://gurillaztv.github.io/anilex/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://gurillaztv.github.io/anilex/datenschutz.html">
+<style>
+  :root{
+    --ink:#111614;
+    --muted:#5b655e;
+    --green:#2f7d46;
+    --green-dark:#245f36;
+    --green-soft:#e9f3ec;
+    --gold:#d4a017;
+    --gold-soft:#faf3de;
+    --paper:#ffffff;
+    --grey:#f5f6f3;
+    --line:#e6e9e4;
+    --round:'Arial Rounded MT Bold','SF Pro Rounded',ui-rounded,-apple-system,'Segoe UI',sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--grey);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:var(--green);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,.rounded{font-family:var(--round);letter-spacing:-.01em;color:var(--ink)}
+
+  /* ===== NAV ===== */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-logo img{height:40px;width:auto}
+  .nav-back{font-family:var(--round);font-size:.85rem;color:var(--muted);white-space:nowrap}
+  .nav-back:hover{color:var(--ink);text-decoration:none}
+  .nav-side{display:flex;align-items:center;gap:16px}
+
+  /* ===== LANGUAGE SWITCHER ===== */
+  .lang-switch{display:inline-flex;align-items:center;gap:4px;font-family:var(--round);font-size:.8rem;white-space:nowrap}
+  .lang-switch .lang-link{padding:4px 9px;border-radius:999px;color:var(--muted);text-decoration:none;transition:color .15s ease, background .15s ease}
+  .lang-switch a.lang-link:hover{color:var(--ink);background:var(--grey);text-decoration:none}
+  .lang-switch .lang-link.is-active{color:var(--green);background:var(--green-soft);cursor:default}
+  .lang-switch .lang-sep{color:var(--muted);opacity:.4}
+  /* narrow screens: compact switcher, back link may wrap */
+  @media (max-width:420px){
+    .nav-side{gap:10px}
+    .lang-switch{font-size:.75rem;gap:2px}
+    .lang-switch .lang-link{padding:3px 6px}
+    .nav-back{white-space:normal;text-align:right;line-height:1.3}
+    .nav-logo img{height:auto;max-height:40px}
+  }
+
+  /* ===== LEGAL BODY ===== */
+  main.legal{padding:52px 24px 80px}
+  .legal-wrap{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(26px,5vw,58px);box-shadow:0 20px 50px rgba(17,22,20,.05)}
+  .eyebrow{display:inline-block;font-family:var(--round);font-size:.8rem;color:var(--green);background:var(--green-soft);padding:6px 16px;border-radius:999px;margin-bottom:18px}
+  .legal-wrap h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.1;margin-bottom:12px}
+  .stand{color:var(--muted);font-size:.95rem;margin-bottom:6px}
+  .intro{color:var(--muted);font-size:1.02rem;margin:16px 0 4px}
+  .legal-wrap h2{font-size:clamp(1.2rem,3vw,1.5rem);line-height:1.25;margin:44px 0 14px;scroll-margin-top:80px}
+  .legal-wrap h2 .num{color:var(--green);margin-right:.4em}
+  .legal-wrap h3{font-size:1.05rem;margin:22px 0 8px;color:var(--green-dark)}
+  .legal-wrap p{margin-bottom:14px;color:#26312c}
+  .legal-wrap ul,.legal-wrap ol{margin:0 0 16px 0;padding:0;list-style:none}
+  .legal-wrap li{position:relative;padding-left:26px;margin-bottom:9px;color:#26312c}
+  .legal-wrap li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+  .legal-wrap strong{color:var(--ink)}
+  hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+
+  .callout{background:var(--green-soft);border:1px solid rgba(47,125,70,.2);border-radius:16px;padding:22px 24px;margin:8px 0 18px}
+  .callout.gold{background:var(--gold-soft);border-color:#eeddab}
+  .callout .addr{font-family:var(--round);font-size:1.05rem;line-height:1.55;color:var(--ink)}
+  .callout p{margin-bottom:6px}
+  .callout p:last-child{margin-bottom:0}
+
+  /* ===== TOC ===== */
+  .toc{background:var(--grey);border:1px solid var(--line);border-radius:18px;padding:22px 26px;margin:26px 0 6px}
+  .toc h2{font-family:var(--round);font-size:1.05rem;margin:0 0 14px;color:var(--ink)}
+  .toc ol{list-style:none;counter-reset:toc;margin:0;padding:0;columns:2;column-gap:32px}
+  .toc li{counter-increment:toc;position:relative;padding-left:30px;margin-bottom:9px;break-inside:avoid;color:#26312c;font-size:.95rem}
+  .toc li::before{content:counter(toc) ".";position:absolute;left:0;top:0;font-family:var(--round);font-size:.85rem;color:var(--green);background:none;width:auto;height:auto;border-radius:0}
+  .toc a{color:#26312c}
+  .toc a:hover{color:var(--green)}
+  @media(max-width:560px){ .toc ol{columns:1} }
+
+  /* ===== FOOTER ===== */
+  footer{border-top:1px solid var(--line);background:var(--paper);padding:34px 24px 46px;color:var(--muted);font-size:.9rem}
+  .foot-inner{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+  .foot-brand{display:flex;align-items:center;gap:12px}
+  .foot-brand img{height:30px;width:auto}
+  .foot-links{display:flex;flex-wrap:wrap;gap:14px 24px;font-weight:600}
+  .foot-links a{color:var(--muted)}
+  .foot-links a:hover{color:var(--ink);text-decoration:none}
+  .foot-links a[aria-current="page"]{color:var(--green)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html" aria-label="To the Anilex home page">
+      <img src="../assets/logo.png" alt="ANILEX – Snap them all">
+    </a>
+    <div class="nav-side">
+      <span class="lang-switch" role="group" aria-label="Select language">
+        <a class="lang-link" href="../datenschutz.html" hreflang="de" lang="de">DE</a>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <span class="lang-link is-active" lang="en" aria-current="true">EN</span>
+      </span>
+      <a class="nav-back" href="index.html">&larr; Back to home page</a>
+    </div>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="legal-wrap">
+    <span class="eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="stand">Last updated: 22 July 2026</p>
+
+    <div class="callout gold">
+      <p><strong>Please note:</strong> This English text is a translation provided for your convenience only. The legally binding version is the German one: <a href="../datenschutz.html">Datenschutzerkl&auml;rung (German)</a>. In case of any discrepancy or ambiguity, the German version prevails.</p>
+    </div>
+
+    <p class="intro">Protecting your personal data matters to us. ANILEX is built to use as little data as possible: there is no user account, and your collection, your photos and your location data stay on your device. Data is transferred to third parties mainly for two purposes: for AI-assisted species recognition (section 4) and for the advertising that funds the free version (section 11). Below we explain which data is processed when you use the app and what rights you have.</p>
+
+    <div class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#controller">Controller and contact</a></li>
+        <li><a href="#principle">Basic principle: no account, largely local</a></li>
+        <li><a href="#local">Data stored locally on your device</a></li>
+        <li><a href="#recognition">Species recognition from a photo</a></li>
+        <li><a href="#third-country">Data transfers to the USA (Google)</a></li>
+        <li><a href="#photos">Photos and stickers stay local</a></li>
+        <li><a href="#location">Location data (optional)</a></li>
+        <li><a href="#permissions">Device permissions</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#catalogue">Species catalog from the server</a></li>
+        <li><a href="#advertising">Advertising (Google AdMob)</a></li>
+        <li><a href="#purchases">In-app purchases (Anilex GOLD)</a></li>
+        <li><a href="#no-tracking">No analytics of our own, no sale of data</a></li>
+        <li><a href="#retention">Storage period and deletion</a></li>
+        <li><a href="#rights">Your rights as a data subject</a></li>
+        <li><a href="#complaint">Right to lodge a complaint with a supervisory authority</a></li>
+        <li><a href="#children">Children and families</a></li>
+        <li><a href="#changes">Changes to this privacy policy</a></li>
+      </ol>
+    </div>
+
+    <h2 id="controller"><span class="num">1.</span>Controller and contact</h2>
+    <p>The controller within the meaning of the General Data Protection Regulation (GDPR) and other national data protection laws is:</p>
+    <div class="callout">
+      <p class="addr">Philip Mauersberger<br>
+      Neurottstra&szlig;e 6a<br>
+      68775 Ketsch<br>
+      Germany</p>
+      <p>E-mail: <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a></p>
+    </div>
+    <p>If you have questions about data protection or wish to exercise your rights, you can contact the address above at any time. There is no legal obligation to appoint a data protection officer, and none has been appointed.</p>
+
+    <h2 id="principle"><span class="num">2.</span>Basic principle: no account, largely local</h2>
+    <p>ANILEX requires <strong>no user account, no login and no registration</strong>. You can use the app without telling us your name, e-mail address or a password.</p>
+    <p>The nickname you enter during onboarding is stored <strong>exclusively locally on your device</strong>. No server account and no user profile is created with us. The nickname serves solely to address you personally within the app on your device.</p>
+    <p>Personal data leaves your device only in the cases described in section 4 (species recognition), section 11 (advertising) and section 12 (in-app purchases). Species recognition does not transmit your name, your location or any identifiers.</p>
+
+    <h2 id="local"><span class="num">3.</span>Data stored locally on your device</h2>
+    <p>Your progress and your settings are stored locally in the device storage (via the operating system storage &ldquo;AsyncStorage&rdquo;) and in the app&rsquo;s own documents folder. This includes in particular:</p>
+    <ul>
+      <li>nickname and selected avatar</li>
+      <li>your catches (recognized species) including the locally stored coordinates of the places where you found them</li>
+      <li>your expeditions &ndash; the recorded route is kept as a list of points on your device &ndash; and your district progress</li>
+      <li>experience points (XP), streaks, achievements and titles</li>
+      <li>quiz progress</li>
+      <li>app settings (e.g. language, notifications)</li>
+    </ul>
+    <p>This data resides exclusively on your device. We have no access to it. The legal basis for the local storage is Art. 6(1)(b) GDPR (provision of the app functions you requested).</p>
+
+    <h2 id="recognition"><span class="num">4.</span>Species recognition from a photo</h2>
+    <p>The central function of the app is the AI-assisted recognition of the animal species in a photo you have taken. This process works as follows:</p>
+    <ul>
+      <li>When you photograph an animal, a <strong>downscaled copy of the photo</strong> (scaled down to 768&nbsp;pixels wide and compressed as a JPEG) is sent to our own server function. It is operated at Supabase Inc.; the server location is in the EU (Frankfurt, AWS region eu-central-1).</li>
+      <li>Our server function forwards the image to the AI interface <strong>Google Gemini API</strong> (provider: Google Ireland Ltd., Ireland, or Google LLC, USA) purely for species recognition.</li>
+      <li>The image is used only <strong>temporarily for processing</strong> and is <strong>not stored permanently on our servers</strong>.</li>
+      <li>The only things transmitted are the downscaled image, the file type and your language setting (&ldquo;de&rdquo; or &ldquo;en&rdquo;). <strong>No name, no location and no device or user identifier</strong> is transmitted.</li>
+    </ul>
+    <p>The legal basis for this processing is Art. 6(1)(b) GDPR (provision of the core function of the app that you requested) and, in the alternative, Art. 6(1)(f) GDPR (our legitimate interest in providing a working, reliable species recognition). Depending on the subject, the transmitted photo may contain personal data; we therefore recommend that you do not photograph other people.</p>
+    <p>Further information on the data processing by our service providers can be found in their privacy notices:</p>
+    <ul>
+      <li>Supabase: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></li>
+      <li>Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
+    </ul>
+
+    <h2 id="third-country"><span class="num">5.</span>Data transfers to the USA (Google)</h2>
+    <p>As part of the species recognition described in section 4, the downscaled photo may also be processed by Google outside the European Union, in particular in the <strong>USA</strong>. Under data protection law, the USA is regarded as a third country without a generally equivalent level of data protection.</p>
+    <p>Appropriate safeguards within the meaning of Art. 44&nbsp;et seq. GDPR are in place for this transfer: Google is certified under the <strong>EU-US Data Privacy Framework</strong> (adequacy decision of the EU Commission), and in addition the <strong>Standard Contractual Clauses (SCC)</strong> adopted by the EU Commission apply. Despite these safeguards, it cannot be entirely ruled out that US authorities may access transmitted data. Since we deliberately transmit neither name, location nor identifiers, the transfer is limited to the downscaled image.</p>
+
+    <h2 id="photos"><span class="num">6.</span>Photos and stickers stay local</h2>
+    <p>The <strong>original photo</strong> and the <strong>photo sticker</strong> created from it are stored exclusively in the local app storage of your device. There is <strong>no upload to a cloud photo gallery and no synchronization</strong> with our servers or those of third parties. The only image that leaves your device is the downscaled copy used for species recognition (section 4).</p>
+    <p>Cutting the animal out of the background happens <strong>directly on your device</strong>, using the image analysis functions of the operating system (Apple Vision, from iOS&nbsp;17). No data is transmitted to us or to third parties in the process.</p>
+
+    <h2 id="location"><span class="num">7.</span>Location data (optional)</h2>
+    <p>Only if you expressly allow it does the app use your location, and only <strong>while the app is open</strong> (&ldquo;when in use&rdquo;); there is no background tracking. It is used for three things:</p>
+    <ul>
+      <li>to record and name the <strong>place where you found</strong> an animal and to show your catches on a personal map (a coarse position is enough for this);</li>
+      <li>to determine your <strong>ranger district</strong>;</li>
+      <li>to measure the <strong>route and distance of an expedition</strong> while the expedition screen is open. This uses a more precise position and is stored as a list of points on your device.</li>
+    </ul>
+    <p>Converting the coordinates into a place name is done via the <strong>system service of the operating system (Apple)</strong>.</p>
+    <p>Location data is <strong>stored only locally on your device</strong> and is <strong>not transmitted to our servers and not to Google</strong>. The legal basis is your consent pursuant to Art. 6(1)(a) GDPR, which you can withdraw at any time in your device settings. The app also works <strong>without location access</strong> &ndash; the map view of your finds, the district feature and the expedition distance are then unavailable.</p>
+
+    <h2 id="permissions"><span class="num">8.</span>Device permissions</h2>
+    <p>The app requests only those permissions that are necessary for the respective function:</p>
+    <ul>
+      <li><strong>Camera:</strong> for photographing (&ldquo;catching&rdquo;) an animal.</li>
+      <li><strong>Photo library:</strong> only for the optional export of a catch to the Photos app on your device.</li>
+      <li><strong>Location:</strong> optional, see section 7.</li>
+    </ul>
+    <p>You can grant or withdraw each of these permissions at any time in your device settings.</p>
+
+    <h2 id="notifications"><span class="num">9.</span>Notifications</h2>
+    <p>If you enable notifications, these are exclusively <strong>local reminders</strong> generated on your device. <strong>No push server is used, and no push token</strong> is collected or transmitted to us.</p>
+
+    <h2 id="catalogue"><span class="num">10.</span>Species catalog from the server</h2>
+    <p>On startup, the app loads the public species list (the species catalog) from our server (Supabase, server location EU). <strong>No personal data is transmitted</strong> in the process; this is purely a retrieval of public catalog data. Technically, the server must process your IP address in order to deliver the response. The legal basis is Art. 6(1)(f) GDPR (legitimate interest in the technical provision of the app content).</p>
+
+    <h2 id="advertising"><span class="num">11.</span>Advertising (Google AdMob)</h2>
+    <p>ANILEX can be used free of charge, and the free version is funded by advertising &ndash; it is not ad-free. We use <strong>Google AdMob</strong> as our advertising network. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland; depending on your location, the processing may also be carried out by Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
+    <p>Two ad formats are shown:</p>
+    <ul>
+      <li><strong>Full-screen ads (interstitial):</strong> these appear automatically after you have caught a certain number of animals.</li>
+      <li><strong>Rewarded video ads (rewarded):</strong> these start only if you expressly select them yourself, and in return they unlock additional catches for the current week.</li>
+    </ul>
+    <p>If you have made one of the purchases described in section 12 (&ldquo;Anilex GOLD&rdquo;), <strong>no ads are shown to you</strong>. In that case, Google&rsquo;s advertising SDK is not even started when the app launches; no ads are then requested and no data is transmitted to Google.</p>
+
+    <h3>Which data is processed</h3>
+    <p>For the delivery, fraud prevention and billing of the ads, Google processes, according to its own information, in particular:</p>
+    <ul>
+      <li><strong>device and advertising identifiers</strong> &ndash; on iOS in particular the advertising identifier (&ldquo;IDFA&rdquo;), if you have allowed it, as well as identifiers assigned by Google itself;</li>
+      <li>your <strong>IP address</strong> and the <strong>approximate location information</strong> derived from it (usually at country, region or city level). The GPS coordinates collected by the app (section 7) are <strong>not</strong> transmitted to Google;</li>
+      <li>technical information about the device, operating system, language setting and app version;</li>
+      <li>your <strong>interaction with the ads</strong> &ndash; whether an ad was delivered and seen, whether you tapped it and whether a rewarded video ad was watched to the end.</li>
+    </ul>
+    <p>We ourselves do not receive this information in personally identifiable form, but only aggregated reports from Google (such as the number of ads delivered and the revenue generated from them). Google selects the ad content; we have no direct influence on it. In the app, the ad content is restricted to the <strong>&ldquo;G&rdquo; content rating</strong> (suitable for all ages), matching the app&rsquo;s own age rating.</p>
+
+    <h3>Consent dialog and App Tracking Transparency (ATT)</h3>
+    <p>Before any ad is loaded, the app asks for your decision in two steps, in this order:</p>
+    <ul>
+      <li><strong>1. Consent dialog:</strong> the app shows you Google&rsquo;s consent dialog (the &ldquo;User Messaging Platform&rdquo;, UMP), in which the purposes are named and which you can decline. It appears where the law requires it &ndash; in particular in the EU, the EEA and the UK &ndash; and only until you have answered it.</li>
+      <li><strong>2. ATT prompt:</strong> after that, the app displays the <strong>App Tracking Transparency prompt</strong> required by Apple on iOS. There you decide whether ANILEX may track your activity across other companies&rsquo; apps and websites.</li>
+    </ul>
+    <p>Only then is the advertising SDK started. The result of the two decisions:</p>
+    <ul>
+      <li><strong>If you agree:</strong> Google may use your device&rsquo;s advertising identifier and show you <strong>personalized advertising</strong>. In doing so, Google can combine data from various apps and websites and use it to build interest profiles for advertising purposes.</li>
+      <li><strong>If you decline or do not respond:</strong> the advertising identifier is not made available. You will then see <strong>non-personalized advertising</strong>, which is based essentially on the current context. In this case, too, technical data such as IP address, device data and ad interactions is processed for delivery, fraud prevention and billing &ndash; delivering ads entirely without data processing is technically impossible.</li>
+    </ul>
+    <p>Declining does <strong>not</strong> switch off advertising; it affects only the <em>personalization</em> of the ads. Ads are switched off only by an &ldquo;Anilex GOLD&rdquo; purchase (section 12).</p>
+
+    <h3>Legal bases</h3>
+    <ul>
+      <li><strong>Personalized advertising</strong> as well as the storing of information on your device and access to it for this purpose: your <strong>consent</strong> pursuant to Art. 6(1)(a) GDPR in conjunction with Section&nbsp;25(1) TDDDG (German Telecommunications Digital Services Data Protection Act), which you give in the consent dialog and in the ATT prompt.</li>
+      <li><strong>Non-personalized advertising</strong> as well as the technical delivery, ad-level measurement, fraud prevention and billing: our <strong>legitimate interest</strong> in funding the app provided free of charge pursuant to Art. 6(1)(f) GDPR.</li>
+    </ul>
+
+    <h3>Withdrawal and choices</h3>
+    <p>You can <strong>withdraw consent you have given at any time with effect for the future</strong>. The lawfulness of the processing carried out up to the withdrawal remains unaffected. You have the following options:</p>
+    <ul>
+      <li><strong>In the app:</strong> open <em>Settings</em> in ANILEX and tap <em>Change ad settings</em>. This reopens Google&rsquo;s consent dialog, where you can change or withdraw your decision. The entry is shown whenever Google requires such an option for you; if you have GOLD, no ads are loaded anyway and the entry is therefore not shown.</li>
+      <li><strong>Change the permission for ANILEX:</strong> iOS <em>Settings</em> &rarr; <em>Privacy &amp; Security</em> &rarr; <em>Tracking</em> &rarr; toggle next to &ldquo;Anilex&rdquo;. If you switch it off, you will only see non-personalized advertising.</li>
+      <li><strong>Prevent tracking for all apps:</strong> in the same menu via the option &ldquo;Allow Apps to Request to Track&rdquo;.</li>
+      <li>Adjust your <strong>ad settings at Google</strong>: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.</li>
+      <li><strong>Object</strong> to the processing based on Art. 6(1)(f) GDPR pursuant to Art. 21 GDPR &ndash; see section 15.</li>
+      <li><strong>Switch off advertising completely:</strong> with one of the purchases described in section 12, no more ads will be shown to you.</li>
+    </ul>
+    <p>Details of the processing by Google can be found in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google&rsquo;s privacy policy</a> and in the information on <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">advertising at Google</a>. Section 5 applies accordingly to processing outside the European Union.</p>
+
+    <h2 id="purchases"><span class="num">12.</span>In-app purchases (Anilex GOLD)</h2>
+    <p>In the app you can optionally purchase paid additional features under the name &ldquo;Anilex GOLD&rdquo;: two auto-renewing subscriptions (one week and six months) and a one-time purchase. The contractual details are governed by our <a href="terms.html">Terms of Use</a>.</p>
+    <p>The purchase and the entire <strong>payment processing run exclusively through Apple</strong> (App Store / StoreKit). The following applies:</p>
+    <ul>
+      <li>We receive <strong>no payment data</strong> &ndash; neither your name nor your address, your Apple ID or your bank and credit card details.</li>
+      <li>Apple processes the payment and customer data <strong>as a controller in its own right</strong> under its own privacy policy. We have no influence on this.</li>
+      <li>From Apple we receive only <strong>aggregated sales and billing statistics</strong> that do not allow any conclusions to be drawn about individual persons.</li>
+      <li>The app asks Apple only <strong>whether a valid purchase exists</strong> &ndash; including when you use &ldquo;Restore purchases&rdquo;. The result, a simple yes or no, is stored only locally on your device. No account and no purchase profile is created with us, and no purchase data is transmitted to our servers.</li>
+    </ul>
+    <p>The legal basis for querying the purchase status and unlocking the purchased features is Art. 6(1)(b) GDPR (performance of the contract for the paid features).</p>
+    <p>Apple&rsquo;s privacy policy is available at <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a>.</p>
+
+    <h2 id="no-tracking"><span class="num">13.</span>No analytics of our own, no sale of data</h2>
+    <p>Beyond the advertising described in section 11, we use <strong>no analytics, statistics or crash reporting SDKs of our own</strong>. We do not measure which screens you open, how long you play or which animals you catch &ndash; that information stays on your device (section 3).</p>
+    <p>We <strong>do not sell data</strong>, do not pass on personal data to third parties for our own advertising purposes and do not build user profiles. Cross-app and cross-website tracking by our advertising partner Google takes place only if you have consented to it in the consent dialog and the ATT prompt (section 11).</p>
+
+    <h2 id="retention"><span class="num">14.</span>Storage period and deletion</h2>
+    <p>The downscaled images transmitted for species recognition are used only for the duration of the processing and are not stored permanently by us (see section 4).</p>
+    <p>All other data (progress, catches, photos, location information, settings) resides locally on your device and remains there until you delete it. You can remove this data yourself at any time by deleting individual catches in the app or by uninstalling the app completely. <strong>Uninstalling the app</strong> removes the locally stored data from your device.</p>
+    <p>We have no influence on the storage period of the data arising from the delivery of advertising (section 11) and from purchases (section 12); it is governed by the rules of Google and Apple respectively. Both companies are also legally obliged to retain certain billing data.</p>
+
+    <h2 id="rights"><span class="num">15.</span>Your rights as a data subject</h2>
+    <p>Under the GDPR you have in particular the following rights:</p>
+    <ul>
+      <li><strong>Access</strong> (Art. 15 GDPR)</li>
+      <li><strong>Rectification</strong> (Art. 16 GDPR)</li>
+      <li><strong>Erasure</strong> (Art. 17 GDPR)</li>
+      <li><strong>Restriction of processing</strong> (Art. 18 GDPR)</li>
+      <li><strong>Objection</strong> to the processing (Art. 21 GDPR)</li>
+      <li><strong>Data portability</strong> (Art. 20 GDPR)</li>
+      <li>Withdrawal of consent given, with effect for the future (Art. 7(3) GDPR)</li>
+    </ul>
+    <p>Please note: because we <strong>do not maintain a user account</strong> and the vast majority of your data resides exclusively locally on your device, we generally have no access to this data and, lacking any means of attribution, cannot assign it to you or hand it over directly. For the local data you effectively exercise these rights yourself &ndash; by viewing, changing or deleting data in the app or by uninstalling it. For questions about the processing described in sections 4, 5, 10, 11 and 12, please contact the address given in section 1. Insofar as your request concerns data that Google (section 11) or Apple (section 12) processes under its own responsibility, please address it directly to those companies.</p>
+
+    <h2 id="complaint"><span class="num">16.</span>Right to lodge a complaint with a supervisory authority</h2>
+    <p>Without prejudice to other remedies, you have the right to lodge a complaint with a data protection supervisory authority if you believe that the processing of your personal data infringes the GDPR (Art. 77 GDPR). The competent authorities include the supervisory authority at our place of business:</p>
+    <div class="callout">
+      <p class="addr">Der Landesbeauftragte f&uuml;r den Datenschutz und die Informationsfreiheit Baden-W&uuml;rttemberg<br>
+      Lautenschlagerstra&szlig;e 20<br>
+      70173 Stuttgart<br>
+      Germany</p>
+      <p><a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener noreferrer">www.baden-wuerttemberg.datenschutz.de</a></p>
+    </div>
+    <p>You may also contact the supervisory authority of your habitual residence or place of work.</p>
+
+    <h2 id="children"><span class="num">17.</span>Children and families</h2>
+    <p>ANILEX is designed to be family-friendly and works without a user account. However, the free version contains <strong>advertising</strong> (section 11) and offers <strong>paid in-app purchases</strong> (section 12). We therefore ask parents and guardians to accompany children when they use the app.</p>
+    <p><strong>Consent to personalized advertising</strong> is valid only if it is given by a person capable of consenting; in the case of children, the consent of the guardians is required (Art. 8 GDPR). If children use the app, we recommend <strong>declining</strong> both the consent dialog and the ATT prompt, or preventing tracking entirely in the device settings (see section 11).</p>
+    <p><strong>In-app purchases</strong> can be blocked in the iOS settings under <em>Screen Time</em> &rarr; <em>Content &amp; Privacy Restrictions</em>, or made subject to approval by the guardians via Family Sharing with &ldquo;Ask to Buy&rdquo;.</p>
+    <p>Please also point children to the safety and nature conservation notes for taking photos outdoors. Since a photo is transmitted for species recognition (see section 4), children should be told not to photograph other people.</p>
+
+    <h2 id="changes"><span class="num">18.</span>Changes to this privacy policy</h2>
+    <p>We reserve the right to amend this privacy policy so that it always meets the current legal requirements or to reflect changes to our features. The version in force at the time then applies to your renewed visit or continued use of the app. You can identify the version by the date at the top of this page.</p>
+
+    <hr>
+    <p style="color:var(--muted);font-size:.95rem">If you have questions about data protection, you can reach us at <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img src="../assets/logo.png" alt="ANILEX">
+      <span>&copy; 2026 Anilex</span>
+    </div>
+    <nav class="foot-links" aria-label="Legal">
+      <a href="index.html">Home</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="imprint.html">Legal Notice</a>
+      <a href="../datenschutz.html" hreflang="de" lang="de">Deutsch</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

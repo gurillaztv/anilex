@@ -9,6 +9,9 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="assets/camera.png">
 <link rel="apple-touch-icon" href="assets/camera.png">
+<link rel="alternate" hreflang="de" href="https://gurillaztv.github.io/anilex/nutzungsbedingungen.html">
+<link rel="alternate" hreflang="en" href="https://gurillaztv.github.io/anilex/en/terms.html">
+<link rel="alternate" hreflang="x-default" href="https://gurillaztv.github.io/anilex/nutzungsbedingungen.html">
 <style>
   :root{
     --ink:#111614;
@@ -38,6 +41,22 @@
   .nav-logo img{height:40px;width:auto}
   .nav-back{font-family:var(--round);font-size:.85rem;color:var(--muted);white-space:nowrap}
   .nav-back:hover{color:var(--ink);text-decoration:none}
+  .nav-side{display:flex;align-items:center;gap:16px}
+
+  /* ===== SPRACHUMSCHALTER ===== */
+  .lang-switch{display:inline-flex;align-items:center;gap:4px;font-family:var(--round);font-size:.8rem;white-space:nowrap}
+  .lang-switch .lang-link{padding:4px 9px;border-radius:999px;color:var(--muted);text-decoration:none;transition:color .15s ease, background .15s ease}
+  .lang-switch a.lang-link:hover{color:var(--ink);background:var(--grey);text-decoration:none}
+  .lang-switch .lang-link.is-active{color:var(--green);background:var(--green-soft);cursor:default}
+  .lang-switch .lang-sep{color:var(--muted);opacity:.4}
+  /* schmale Screens: Umschalter kompakter, Zurueck-Link darf umbrechen */
+  @media (max-width:420px){
+    .nav-side{gap:10px}
+    .lang-switch{font-size:.75rem;gap:2px}
+    .lang-switch .lang-link{padding:3px 6px}
+    .nav-back{white-space:normal;text-align:right;line-height:1.3}
+    .nav-logo img{height:auto;max-height:40px}
+  }
 
   /* ===== LEGAL BODY ===== */
   main.legal{padding:52px 24px 80px}
@@ -80,7 +99,14 @@
     <a class="nav-logo" href="index.html" aria-label="Zur Anilex Startseite">
       <img src="assets/logo.png" alt="ANILEX – Snap them all">
     </a>
-    <a class="nav-back" href="index.html">&larr; Zur Startseite</a>
+    <div class="nav-side">
+      <span class="lang-switch" role="group" aria-label="Sprache w&auml;hlen">
+        <span class="lang-link is-active" lang="de" aria-current="true">DE</span>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <a class="lang-link" href="en/terms.html" hreflang="en" lang="en">EN</a>
+      </span>
+      <a class="nav-back" href="index.html">&larr; Zur Startseite</a>
+    </div>
   </div>
 </header>
 
@@ -96,7 +122,7 @@
     <p>Ergänzend gilt unsere <a href="datenschutz.html">Datenschutzerklärung</a>, die erläutert, wie wir mit Daten umgehen.</p>
 
     <h2 id="beschreibung"><span class="num">2.</span>Beschreibung der App</h2>
-    <p>ANILEX ist ein Sammelspiel, mit dem Sie echte Tiere in Ihrer Umgebung entdecken können. Sie fotografieren ein Tier, eine KI-gestützte Arterkennung schlägt die Tierart vor, und Sie sammeln Ihre Funde als Foto-Sticker in einem persönlichen Index. Ergänzend bietet die App spielerische Elemente wie Steckbriefe, Quizfragen, Erfolge und eine persönliche Fundkarte.</p>
+    <p>ANILEX ist ein Sammelspiel, mit dem Sie echte Tiere in Ihrer Umgebung entdecken können. Sie fotografieren ein Tier, eine KI-gestützte Arterkennung schlägt die Tierart vor, und Sie sammeln Ihre Funde als Foto-Sticker in einem persönlichen Index. Ergänzend bietet die App spielerische Elemente wie Steckbriefe, Quizfragen, Erfolge, Truhen mit Sammlerstücken, Ranger-Distrikte, Expeditionen und eine persönliche Fundkarte. Für die Fundkarte, die Distrikte und die Expeditionen ist die Standortfreigabe erforderlich; ohne sie bleiben die übrigen Funktionen uneingeschränkt nutzbar (siehe Ziffer 7 der <a href="datenschutz.html">Datenschutzerklärung</a>).</p>
     <p>Die App ist <strong>kostenlos spielbar</strong>. Sie finanziert sich über <strong>Werbung</strong> (Ziffer 3) und über <strong>optionale kostenpflichtige In-App-Käufe</strong> (Ziffer 4). Ohne Kauf können Sie derzeit bis zu <strong>20 Tiere je Woche</strong> fangen (die Woche beginnt jeweils am Montag); dieses Kontingent lässt sich durch das freiwillige Ansehen belohnter Videoanzeigen erhöhen. Die genannten Grenzwerte sind Teil der Spielgestaltung und können sich im Rahmen von Ziffer 13 ändern.</p>
 
     <h2 id="werbung"><span class="num">3.</span>Werbefinanzierung</h2>
@@ -105,14 +131,15 @@
       <li><strong>Bildschirmfüllende Anzeigen</strong>, die nach einer bestimmten Anzahl von Fängen automatisch eingeblendet werden;</li>
       <li><strong>belohnte Videoanzeigen</strong>, die Sie ausdrücklich selbst starten und die im Gegenzug zusätzliche Fänge für die laufende Woche freischalten.</li>
     </ul>
+    <p>Bevor die erste Anzeige geladen wird, fragt die App Sie über den <strong>Einwilligungs-Dialog von Google</strong> und über <strong>Apples Tracking-Abfrage</strong>, ob Sie personalisierte Werbung zulassen möchten. Lehnen Sie ab, bekommen Sie weiterhin Werbung zu sehen &ndash; dann eben <strong>nicht personalisierte</strong>. Werbefrei ist die App ausschließlich mit einem aktiven GOLD-Zugang (Ziffer 4). Ihre Entscheidung können Sie jederzeit in den <em>Einstellungen</em> der App unter <em>Werbe-Einstellungen ändern</em> widerrufen; Einzelheiten dazu stehen in Ziffer 11 der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
     <p>Häufigkeit, Format und Platzierung der Anzeigen können wir jederzeit anpassen. Die <strong>Inhalte der Anzeigen wählt Google aus</strong>; wir haben darauf keinen unmittelbaren Einfluss und übernehmen für beworbene Produkte, Angebote oder verlinkte Inhalte Dritter keine Verantwortung. Sollte Ihnen eine rechtswidrige Anzeige begegnen, melden Sie sie uns bitte unter der in Ziffer 18 genannten Adresse.</p>
-    <p>Mit einem aktiven &bdquo;Anilex GOLD&ldquo;-Kauf (Ziffer 4) werden Ihnen <strong>keine Anzeigen</strong> mehr ausgespielt. Welche Daten bei der Werbung verarbeitet werden und wie Sie Ihre Einwilligung in personalisierte Werbung widerrufen, steht in Ziffer 11 unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <p>Mit einem aktiven &bdquo;Anilex GOLD&ldquo;-Kauf (Ziffer 4) werden Ihnen <strong>keine Anzeigen</strong> mehr ausgespielt. In diesem Fall wird das Werbe-SDK beim Start der App gar nicht erst geladen, und die beiden oben genannten Abfragen erscheinen nicht. Welche Daten bei der Werbung verarbeitet werden, steht in Ziffer 11 unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
 
     <h2 id="gold"><span class="num">4.</span>Anilex GOLD: Abonnements und Einmalkauf</h2>
     <p>Innerhalb der App können Sie freiwillig kostenpflichtige Zusatzfunktionen unter dem Namen <strong>&bdquo;Anilex GOLD&ldquo;</strong> erwerben. Angeboten werden drei Zugänge:</p>
     <ul>
       <li>ein <strong>Abonnement mit einer Laufzeit von einer Woche</strong>, das sich automatisch verlängert;</li>
-      <li>ein <strong>Abonnement mit einer Laufzeit von einem Jahr</strong>, das sich automatisch verlängert;</li>
+      <li>ein <strong>Abonnement mit einer Laufzeit von sechs Monaten</strong>, das sich automatisch verlängert;</li>
       <li>ein <strong>Einmalkauf</strong> (&bdquo;Lebenslang&ldquo;), der <strong>kein Abonnement</strong> ist und sich <strong>nicht automatisch verlängert</strong>.</li>
     </ul>
 
@@ -135,7 +162,7 @@
 
     <h3>Automatische Verlängerung und Kündigung</h3>
     <div class="callout gold">
-      <p>Die beiden <strong>Abonnements verlängern sich automatisch</strong> um die jeweils gebuchte Laufzeit (eine Woche bzw. ein Jahr), sofern Sie sie nicht <strong>spätestens 24 Stunden vor Ablauf</strong> der laufenden Periode kündigen. Die Belastung Ihrer Apple-ID für die Verlängerung erfolgt innerhalb von 24 Stunden vor Ablauf der laufenden Periode.</p>
+      <p>Die beiden <strong>Abonnements verlängern sich automatisch</strong> um die jeweils gebuchte Laufzeit (eine Woche bzw. sechs Monate), sofern Sie sie nicht <strong>spätestens 24 Stunden vor Ablauf</strong> der laufenden Periode kündigen. Die Belastung Ihrer Apple-ID für die Verlängerung erfolgt innerhalb von 24 Stunden vor Ablauf der laufenden Periode.</p>
       <p>Kündigen können Sie jederzeit in den <strong>Einstellungen Ihrer Apple-ID</strong>: <em>Einstellungen</em> &rarr; <em>[Ihr Name]</em> &rarr; <em>Abonnements</em>. Eine Kündigung wird zum Ende der laufenden Periode wirksam; bis dahin bleibt GOLD nutzbar.</p>
     </div>
     <p>Der <strong>Einmalkauf verlängert sich nicht</strong> und wird nicht wiederkehrend abgerechnet; er muss folglich auch nicht gekündigt werden.</p>
@@ -146,7 +173,7 @@
     <p>Wir können die Preise für künftige Abrechnungszeiträume ändern. Eine Preiserhöhung wird Ihnen von Apple rechtzeitig vor Wirksamwerden mitgeteilt; sie wird für Sie nur wirksam, wenn Sie ihr nach den Vorgaben von Apple zustimmen oder das Abonnement nicht bis zum genannten Zeitpunkt kündigen. Ihre Kündigungsmöglichkeit nach dem vorstehenden Abschnitt bleibt in jedem Fall bestehen. Bereits abgeschlossene Einmalkäufe sind von Preisänderungen nicht betroffen.</p>
 
     <h3>Käufe wiederherstellen</h3>
-    <p>Da ANILEX ohne Nutzerkonto arbeitet, ist Ihr Kauf an <strong>Ihre Apple-ID</strong> gebunden. Auf einem neuen oder zurückgesetzten Gerät stellen Sie GOLD über die Funktion &bdquo;Käufe wiederherstellen&ldquo; im GOLD-Bildschirm wieder her &ndash; melden Sie sich dazu mit derselben Apple-ID an, mit der Sie gekauft haben.</p>
+    <p>Da ANILEX ohne Nutzerkonto arbeitet, ist Ihr Kauf an <strong>Ihre Apple-ID</strong> gebunden. Auf einem neuen oder zurückgesetzten Gerät stellen Sie GOLD über die Funktion &bdquo;Käufe wiederherstellen&ldquo; wieder her, die Sie sowohl im GOLD-Bildschirm als auch in den Einstellungen der App finden &ndash; melden Sie sich dazu mit derselben Apple-ID an, mit der Sie gekauft haben.</p>
 
     <h2 id="widerruf"><span class="num">5.</span>Widerrufsrecht für Verbraucher</h2>
     <p>Verbraucherinnen und Verbrauchern steht bei im Fernabsatz geschlossenen Verträgen über digitale Inhalte und digitale Dienstleistungen grundsätzlich ein <strong>Widerrufsrecht von 14 Tagen</strong> zu (&sect;&sect;&nbsp;312g, 355 BGB).</p>
@@ -182,7 +209,7 @@
     <div class="callout gold">
       <p>Die KI-gestützte Arterkennung liefert lediglich einen <strong>Vorschlag bzw. eine Schätzung</strong> der Tierart. Sie kann fehlerhaft sein. Wir übernehmen <strong>keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität</strong> der Erkennungsergebnisse und der angezeigten Informationen.</p>
     </div>
-    <p>Die Arterkennung ist <strong>kein Ersatz für eine fachliche Bestimmung</strong> durch Expertinnen und Experten. Verlassen Sie sich insbesondere <strong>nicht</strong> auf die App, wenn es um sicherheitsrelevante Entscheidungen geht. Die App gibt <strong>keine Empfehlung zum Verzehr</strong> und <strong>keine Aussage zur Giftigkeit oder Gefährlichkeit</strong> von Tieren, Pflanzen oder Pilzen. Berühren, verzehren oder handhaben Sie niemals ein Lebewesen im Vertrauen auf eine Angabe der App.</p>
+    <p>Die Arterkennung ist <strong>kein Ersatz für eine fachliche Bestimmung</strong> durch Expertinnen und Experten. Verlassen Sie sich insbesondere <strong>nicht</strong> auf die App, wenn es um sicherheitsrelevante Entscheidungen geht. Die App gibt <strong>keine Empfehlung zum Verzehr</strong> von Tieren, Pflanzen oder Pilzen. Einzelne Steckbriefe und Kurzfakten nennen zwar allgemeine Merkmale einer Art &ndash; darunter auch Hinweise auf Giftigkeit oder Wehrhaftigkeit. Diese Angaben sind <strong>spielerisch gehalten und keine verlässliche Sicherheitsauskunft</strong>: Sie beziehen sich auf die Art im Allgemeinen, nicht auf das Tier vor Ihnen, und die Arterkennung kann sich zudem irren. Berühren, verzehren oder handhaben Sie niemals ein Lebewesen im Vertrauen auf eine Angabe der App &ndash; und behandeln Sie insbesondere kein Tier deshalb als ungefährlich, weil die App nichts Gegenteiliges anzeigt.</p>
 
     <h2 id="verbote"><span class="num">10.</span>Zulässige Nutzung und Verbote</h2>
     <p>Sie verpflichten sich, die App nur im Rahmen der geltenden Gesetze und dieser Bedingungen zu nutzen. Insbesondere ist es untersagt:</p>

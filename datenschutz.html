@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Datenschutzerklärung &ndash; ANILEX</title>
-<meta name="description" content="Datenschutzerklärung der App ANILEX: Welche Daten wir verarbeiten, wie die Tiererkennung funktioniert und welche Rechte Sie haben.">
+<meta name="description" content="Datenschutzerklärung der App ANILEX: Welche Daten wir verarbeiten, wie die Tiererkennung funktioniert, wie Werbung und In-App-Käufe ablaufen und welche Rechte Sie haben.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="assets/camera.png">
@@ -98,8 +98,8 @@
   <div class="legal-wrap">
     <span class="eyebrow">Rechtliches</span>
     <h1>Datenschutzerklärung</h1>
-    <p class="stand">Stand: Juli 2026</p>
-    <p class="intro">Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. ANILEX ist bewusst datensparsam gebaut: Es gibt kein Nutzerkonto, und der weitaus größte Teil Ihrer Daten verlässt Ihr Gerät nie. Nachfolgend informieren wir Sie darüber, welche Daten bei der Nutzung der App verarbeitet werden und welche Rechte Ihnen zustehen.</p>
+    <p class="stand">Stand: 22. Juli 2026</p>
+    <p class="intro">Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. ANILEX ist datensparsam gebaut: Es gibt kein Nutzerkonto, und Ihre Sammlung, Ihre Fotos und Ihre Standortdaten bleiben auf Ihrem Gerät. An Dritte übermittelt werden Daten im Wesentlichen für zwei Zwecke: für die KI-gestützte Arterkennung (Ziffer 4) und für die Werbung, über die sich die kostenlose Version finanziert (Ziffer 11). Nachfolgend informieren wir Sie darüber, welche Daten bei der Nutzung der App verarbeitet werden und welche Rechte Ihnen zustehen.</p>
 
     <div class="toc" aria-label="Inhaltsverzeichnis">
       <h2>Inhalt</h2>
@@ -114,7 +114,9 @@
         <li><a href="#berechtigungen">Geräteberechtigungen</a></li>
         <li><a href="#mitteilungen">Mitteilungen</a></li>
         <li><a href="#artkatalog">Artkatalog vom Server</a></li>
-        <li><a href="#kein-tracking">Kein Tracking, keine Werbung, kein Datenverkauf</a></li>
+        <li><a href="#werbung">Werbung (Google AdMob)</a></li>
+        <li><a href="#kaeufe">In-App-Käufe (Anilex GOLD)</a></li>
+        <li><a href="#kein-tracking">Keine eigene Analyse, kein Datenverkauf</a></li>
         <li><a href="#speicherdauer">Speicherdauer und Löschung</a></li>
         <li><a href="#rechte">Ihre Rechte als betroffene Person</a></li>
         <li><a href="#beschwerde">Beschwerderecht bei einer Aufsichtsbehörde</a></li>
@@ -137,7 +139,7 @@
     <h2 id="grundprinzip"><span class="num">2.</span>Grundprinzip: kein Konto, weitgehend lokal</h2>
     <p>ANILEX benötigt <strong>kein Nutzerkonto, keinen Login und keine Registrierung</strong>. Sie können die App nutzen, ohne uns Namen, E-Mail-Adresse oder ein Passwort mitzuteilen.</p>
     <p>Der beim Onboarding eingegebene Spitzname wird <strong>ausschließlich lokal auf Ihrem Gerät</strong> gespeichert. Es wird kein Serverkonto und kein Nutzerprofil bei uns angelegt. Der Spitzname dient allein der persönlichen Ansprache innerhalb der App auf Ihrem Gerät.</p>
-    <p>Personenbezogene Daten verlassen Ihr Gerät nur in dem einen, unter Ziffer 4 beschriebenen Fall der Tiererkennung &ndash; und auch dort ohne Namen, Standort oder Kennungen.</p>
+    <p>Personenbezogene Daten verlassen Ihr Gerät nur in den unter Ziffer 4 (Tiererkennung), Ziffer 11 (Werbung) und Ziffer 12 (In-App-Käufe) beschriebenen Fällen. Bei der Tiererkennung werden dabei weder Name noch Standort oder Kennungen mitgesendet.</p>
 
     <h2 id="lokal"><span class="num">3.</span>Lokal auf dem Gerät gespeicherte Daten</h2>
     <p>Ihr Spielstand und Ihre Einstellungen werden lokal im Gerätespeicher (über die Betriebssystem-Speicher &bdquo;AsyncStorage&ldquo;) sowie im App-eigenen Dokumentenordner abgelegt. Dazu gehören insbesondere:</p>
@@ -192,14 +194,72 @@
     <h2 id="artkatalog"><span class="num">10.</span>Artkatalog vom Server</h2>
     <p>Beim Start lädt die App die öffentliche Artenliste (den Artkatalog) von unserem Server (Supabase, Serverstandort EU). Dabei werden <strong>keine personenbezogenen Daten übertragen</strong>; es handelt sich um einen reinen Abruf öffentlicher Katalogdaten. Technisch notwendig ist hierbei die Verarbeitung Ihrer IP-Adresse durch den Server, um die Antwort ausliefern zu können. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Bereitstellung der App-Inhalte).</p>
 
-    <h2 id="kein-tracking"><span class="num">11.</span>Kein Tracking, keine Werbung, kein Datenverkauf</h2>
-    <p>ANILEX enthält <strong>keine Werbung</strong> und <strong>keine Tracking- oder Analyse-SDKs</strong>. Es findet <strong>kein Nutzer-Tracking über Apps oder Websites hinweg</strong> statt. Wir <strong>verkaufen keine Daten</strong> und geben keine personenbezogenen Daten zu Werbezwecken weiter. Es werden keine Profile über Sie gebildet.</p>
+    <h2 id="werbung"><span class="num">11.</span>Werbung (Google AdMob)</h2>
+    <p>ANILEX ist kostenlos nutzbar und finanziert sich in der kostenlosen Version über Werbung. Als Werbenetzwerk setzen wir <strong>Google AdMob</strong> ein. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; je nach Aufenthaltsort kann die Verarbeitung auch durch die Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA erfolgen.</p>
+    <p>Es werden zwei Anzeigenformen ausgespielt:</p>
+    <ul>
+      <li><strong>Bildschirmfüllende Anzeigen (Interstitial):</strong> Sie erscheinen automatisch, nachdem Sie eine bestimmte Anzahl von Tieren gefangen haben.</li>
+      <li><strong>Belohnte Videoanzeigen (Rewarded):</strong> Sie starten nur, wenn Sie sie ausdrücklich selbst auswählen, und schalten im Gegenzug zusätzliche Fänge für die laufende Woche frei.</li>
+    </ul>
+    <p>Wenn Sie einen der unter Ziffer 12 beschriebenen Käufe (&bdquo;Anilex GOLD&ldquo;) getätigt haben, werden Ihnen <strong>keine Anzeigen ausgespielt</strong>. In diesem Fall wird das Werbe-SDK von Google beim Start der App auch nicht mehr geladen oder initialisiert; es werden dann keine Anzeigen angefordert und keine Daten an Google übermittelt.</p>
 
-    <h2 id="speicherdauer"><span class="num">12.</span>Speicherdauer und Löschung</h2>
+    <h3>Welche Daten dabei verarbeitet werden</h3>
+    <p>Für die Auslieferung, die Betrugsvermeidung und die Abrechnung der Anzeigen verarbeitet Google nach eigenen Angaben insbesondere:</p>
+    <ul>
+      <li><strong>Geräte- und Werbekennungen</strong> &ndash; unter iOS insbesondere den Werbe-Identifier (&bdquo;IDFA&ldquo;), sofern Sie ihn freigegeben haben, sowie von Google selbst vergebene Kennungen;</li>
+      <li>Ihre <strong>IP-Adresse</strong> und daraus abgeleitete <strong>ungefähre Standortangaben</strong> (in der Regel auf Land-, Regions- oder Stadtebene). Die von der App erfassten GPS-Koordinaten (Ziffer 7) werden <strong>nicht</strong> an Google übermittelt;</li>
+      <li>technische Angaben zu Gerät, Betriebssystem, Spracheinstellung und App-Version;</li>
+      <li>Ihre <strong>Interaktion mit den Anzeigen</strong> &ndash; ob eine Anzeige ausgeliefert und gesehen wurde, ob Sie sie angetippt haben und ob eine belohnte Videoanzeige zu Ende gesehen wurde.</li>
+    </ul>
+    <p>Wir selbst erhalten diese Angaben nicht personenbezogen, sondern von Google lediglich zusammengefasste Auswertungen (etwa die Anzahl ausgelieferter Anzeigen und die daraus erzielten Einnahmen). Die Anzeigeninhalte wählt Google aus; wir haben darauf keinen unmittelbaren Einfluss. Für die Anzeigen ist in der App eine Beschränkung der Inhalte auf die Altersfreigabe &bdquo;PG&ldquo; eingestellt.</p>
+
+    <h3>App-Tracking-Transparenz (ATT) und personalisierte Werbung</h3>
+    <p>Bevor das Werbe-SDK gestartet wird, zeigt die App unter iOS die von Apple vorgegebene <strong>Abfrage zur App-Tracking-Transparenz (ATT)</strong>. Sie entscheiden dort, ob ANILEX Ihre Aktivitäten in Apps und auf Websites anderer Anbieter verfolgen darf.</p>
+    <ul>
+      <li><strong>Wenn Sie zustimmen:</strong> Google darf den Werbe-Identifier Ihres Geräts verwenden und Ihnen <strong>personalisierte Werbung</strong> ausspielen. Google kann dabei Daten aus verschiedenen Apps und Websites zusammenführen und daraus Interessenprofile zu Werbezwecken bilden.</li>
+      <li><strong>Wenn Sie ablehnen oder nicht antworten:</strong> Der Werbe-Identifier wird nicht bereitgestellt. Sie sehen dann <strong>nicht personalisierte Werbung</strong>, die sich im Wesentlichen an der aktuellen Situation orientiert. Auch in diesem Fall werden für die Auslieferung, die Betrugsvermeidung und die Abrechnung technische Daten wie IP-Adresse, Gerätedaten und Anzeigen-Interaktionen verarbeitet &ndash; eine Anzeigenauslieferung ganz ohne Datenverarbeitung ist technisch nicht möglich.</li>
+    </ul>
+    <p>Eine Ablehnung der ATT-Abfrage schaltet die Werbung <strong>nicht ab</strong>; sie wirkt sich ausschließlich auf die <em>Personalisierung</em> der Anzeigen aus.</p>
+
+    <h3>Rechtsgrundlagen</h3>
+    <ul>
+      <li><strong>Personalisierte Werbung</strong> sowie das Speichern von Informationen auf Ihrem Endgerät und der Zugriff darauf zu diesem Zweck: Ihre <strong>Einwilligung</strong> nach Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit &sect;&nbsp;25 Abs. 1 TDDDG, die Sie über die ATT-Abfrage erteilen.</li>
+      <li><strong>Nicht personalisierte Werbung</strong> sowie die technische Auslieferung, die Messung auf Anzeigenebene, die Betrugsvermeidung und die Abrechnung: unser <strong>berechtigtes Interesse</strong> an der Finanzierung der kostenlos bereitgestellten App nach Art. 6 Abs. 1 lit. f DSGVO.</li>
+    </ul>
+
+    <h3>Widerruf und Wahlmöglichkeiten</h3>
+    <p>Eine erteilte Einwilligung können Sie <strong>jederzeit mit Wirkung für die Zukunft widerrufen</strong>. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt. Sie haben folgende Möglichkeiten:</p>
+    <ul>
+      <li><strong>Erlaubnis für ANILEX ändern:</strong> iOS-<em>Einstellungen</em> &rarr; <em>Datenschutz &amp; Sicherheit</em> &rarr; <em>Tracking</em> &rarr; Schalter neben &bdquo;Anilex&ldquo;. Schalten Sie ihn aus, sehen Sie nur noch nicht personalisierte Werbung.</li>
+      <li><strong>Tracking für alle Apps unterbinden:</strong> im selben Menü über die Option &bdquo;Apps erlauben, Tracking anzufragen&ldquo;.</li>
+      <li><strong>Werbeeinstellungen bei Google</strong> anpassen: <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>.</li>
+      <li><strong>Widerspruch</strong> gegen die auf Art. 6 Abs. 1 lit. f DSGVO gestützte Verarbeitung nach Art. 21 DSGVO &ndash; siehe Ziffer 15.</li>
+      <li><strong>Werbung vollständig abschalten:</strong> Mit einem der unter Ziffer 12 beschriebenen Käufe werden Ihnen keine Anzeigen mehr ausgespielt.</li>
+    </ul>
+    <p>Einzelheiten zur Verarbeitung durch Google finden Sie in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a> sowie in den Hinweisen zur <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Werbung bei Google</a>. Für eine Verarbeitung außerhalb der Europäischen Union gilt Ziffer 5 entsprechend.</p>
+
+    <h2 id="kaeufe"><span class="num">12.</span>In-App-Käufe (Anilex GOLD)</h2>
+    <p>In der App können Sie freiwillig kostenpflichtige Zusatzfunktionen unter dem Namen &bdquo;Anilex GOLD&ldquo; erwerben: zwei automatisch verlängernde Abonnements (wöchentlich und jährlich) sowie einen Einmalkauf. Die vertraglichen Einzelheiten regeln unsere <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>.</p>
+    <p>Der Kauf und die gesamte <strong>Zahlungsabwicklung laufen ausschließlich über Apple</strong> (App Store bzw. StoreKit). Dabei gilt:</p>
+    <ul>
+      <li>Wir erhalten <strong>keine Zahlungsdaten</strong> &ndash; weder Ihren Namen noch Ihre Anschrift, Ihre Apple-ID oder Ihre Bank- und Kreditkartendaten.</li>
+      <li>Apple verarbeitet die Zahlungs- und Kundendaten <strong>als eigener Verantwortlicher</strong> nach den eigenen Datenschutzbestimmungen. Wir haben darauf keinen Einfluss.</li>
+      <li>Von Apple erhalten wir lediglich <strong>zusammengefasste Verkaufs- und Abrechnungsstatistiken</strong>, die keinen Rückschluss auf einzelne Personen zulassen.</li>
+      <li>Die App fragt bei Apple ausschließlich ab, <strong>ob ein gültiger Kauf vorliegt</strong> &ndash; auch bei &bdquo;Käufe wiederherstellen&ldquo;. Das Ergebnis, ein einfaches Ja oder Nein, wird nur lokal auf Ihrem Gerät gespeichert. Ein Konto oder ein Kaufprofil bei uns entsteht dabei nicht, und es werden keine Kaufdaten an unsere Server übermittelt.</li>
+    </ul>
+    <p>Rechtsgrundlage für das Abfragen des Kaufstatus und das Freischalten der gekauften Funktionen ist Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Vertrags über die kostenpflichtigen Funktionen).</p>
+    <p>Die Datenschutzbestimmungen von Apple finden Sie unter <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a>.</p>
+
+    <h2 id="kein-tracking"><span class="num">13.</span>Keine eigene Analyse, kein Datenverkauf</h2>
+    <p>Über die unter Ziffer 11 beschriebene Werbung hinaus setzen wir <strong>keine eigenen Analyse-, Statistik- oder Absturzberichts-SDKs</strong> ein. Wir messen nicht, welche Bildschirme Sie öffnen, wie lange Sie spielen oder welche Tiere Sie fangen &ndash; diese Angaben bleiben auf Ihrem Gerät (Ziffer 3).</p>
+    <p>Wir <strong>verkaufen keine Daten</strong>, geben keine personenbezogenen Daten zu eigenen Werbezwecken an Dritte weiter und bilden bei uns keine Nutzerprofile. Eine app- und websiteübergreifende Verfolgung durch unseren Werbepartner Google findet nur statt, wenn Sie ihr in der ATT-Abfrage zugestimmt haben (Ziffer 11).</p>
+
+    <h2 id="speicherdauer"><span class="num">14.</span>Speicherdauer und Löschung</h2>
     <p>Die für die Arterkennung übermittelten verkleinerten Bilder werden nur für die Dauer der Verarbeitung genutzt und nicht dauerhaft bei uns gespeichert (siehe Ziffer 4).</p>
     <p>Alle übrigen Daten (Spielstand, Fänge, Fotos, Standortangaben, Einstellungen) liegen lokal auf Ihrem Gerät und verbleiben dort, solange Sie sie nicht löschen. Sie können diese Daten jederzeit selbst entfernen, indem Sie einzelne Fänge in der App löschen oder die App vollständig deinstallieren. Mit der <strong>Deinstallation der App</strong> werden die lokal gespeicherten Daten von Ihrem Gerät entfernt.</p>
+    <p>Auf die Speicherdauer der bei der Werbeauslieferung (Ziffer 11) und beim Kauf (Ziffer 12) anfallenden Daten haben wir keinen Einfluss; sie richtet sich nach den Vorgaben von Google beziehungsweise Apple. Beide Unternehmen sind zudem gesetzlich verpflichtet, bestimmte Abrechnungsdaten aufzubewahren.</p>
 
-    <h2 id="rechte"><span class="num">13.</span>Ihre Rechte als betroffene Person</h2>
+    <h2 id="rechte"><span class="num">15.</span>Ihre Rechte als betroffene Person</h2>
     <p>Nach der DSGVO stehen Ihnen insbesondere folgende Rechte zu:</p>
     <ul>
       <li><strong>Auskunft</strong> (Art. 15 DSGVO)</li>
@@ -210,9 +270,9 @@
       <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
       <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
     </ul>
-    <p>Bitte beachten Sie: Da wir <strong>kein Nutzerkonto führen</strong> und die weit überwiegende Mehrheit Ihrer Daten ausschließlich lokal auf Ihrem Gerät liegt, haben wir in der Regel keinen Zugriff auf diese Daten und können sie Ihnen mangels Zuordnung nicht direkt zuordnen oder herausgeben. Sie üben diese Rechte für die lokalen Daten faktisch selbst aus &ndash; durch Einsicht, Änderung oder Löschung in der App bzw. durch Deinstallation. Für Fragen zu den unter Ziffer 4, 5 und 10 beschriebenen Verarbeitungen wenden Sie sich bitte an die unter Ziffer 1 genannte Adresse.</p>
+    <p>Bitte beachten Sie: Da wir <strong>kein Nutzerkonto führen</strong> und die weit überwiegende Mehrheit Ihrer Daten ausschließlich lokal auf Ihrem Gerät liegt, haben wir in der Regel keinen Zugriff auf diese Daten und können sie Ihnen mangels Zuordnung nicht direkt zuordnen oder herausgeben. Sie üben diese Rechte für die lokalen Daten faktisch selbst aus &ndash; durch Einsicht, Änderung oder Löschung in der App bzw. durch Deinstallation. Für Fragen zu den unter den Ziffern 4, 5, 10, 11 und 12 beschriebenen Verarbeitungen wenden Sie sich bitte an die unter Ziffer 1 genannte Adresse. Soweit sich Ihre Anfrage auf Daten bezieht, die Google (Ziffer 11) oder Apple (Ziffer 12) in eigener Verantwortung verarbeiten, richten Sie sie bitte unmittelbar an diese Unternehmen.</p>
 
-    <h2 id="beschwerde"><span class="num">14.</span>Beschwerderecht bei einer Aufsichtsbehörde</h2>
+    <h2 id="beschwerde"><span class="num">16.</span>Beschwerderecht bei einer Aufsichtsbehörde</h2>
     <p>Sie haben unbeschadet anderer Rechtsbehelfe das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt (Art. 77 DSGVO). Zuständig ist unter anderem die Aufsichtsbehörde an unserem Sitz:</p>
     <div class="callout">
       <p class="addr">Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br>
@@ -223,10 +283,13 @@
     </div>
     <p>Sie können sich auch an die Aufsichtsbehörde Ihres üblichen Aufenthaltsorts oder Arbeitsplatzes wenden.</p>
 
-    <h2 id="kinder"><span class="num">15.</span>Kinder und Familien</h2>
-    <p>ANILEX ist als familienfreundliche App gestaltet (Altersfreigabe 4+) und kommt bewusst ohne Nutzerkonto, ohne Werbung und ohne Tracking aus. Wir bitten Eltern und Erziehungsberechtigte, die Nutzung der App durch Kinder zu begleiten &ndash; insbesondere im Hinblick auf das Fotografieren im Freien und die Einhaltung der Naturschutz-Hinweise. Da bei der Arterkennung ein Foto übermittelt wird (siehe Ziffer 4), sollten Kinder darauf hingewiesen werden, keine Personen zu fotografieren.</p>
+    <h2 id="kinder"><span class="num">17.</span>Kinder und Familien</h2>
+    <p>ANILEX ist familienfreundlich gestaltet und kommt ohne Nutzerkonto aus. Die kostenlose Version enthält jedoch <strong>Werbung</strong> (Ziffer 11) und bietet <strong>kostenpflichtige In-App-Käufe</strong> (Ziffer 12). Wir bitten Eltern und Erziehungsberechtigte deshalb, die Nutzung der App durch Kinder zu begleiten.</p>
+    <p>Eine <strong>Einwilligung in personalisierte Werbung</strong> ist nur wirksam, wenn sie von einer einwilligungsfähigen Person erteilt wird; bei Kindern ist hierfür die Zustimmung der Erziehungsberechtigten erforderlich (Art. 8 DSGVO). Wenn Kinder die App nutzen, empfehlen wir, die ATT-Abfrage <strong>abzulehnen</strong> oder Tracking in den Geräteeinstellungen ganz zu unterbinden (siehe Ziffer 11).</p>
+    <p><strong>In-App-Käufe</strong> lassen sich in den iOS-Einstellungen unter <em>Bildschirmzeit</em> &rarr; <em>Beschränkungen</em> sperren oder über die Familienfreigabe mit &bdquo;Kauf anfragen&ldquo; an eine Bestätigung durch die Erziehungsberechtigten binden.</p>
+    <p>Bitte weisen Sie Kinder außerdem auf die Sicherheits- und Naturschutz-Hinweise beim Fotografieren im Freien hin. Da bei der Arterkennung ein Foto übermittelt wird (siehe Ziffer 4), sollten Kinder darauf hingewiesen werden, keine Personen zu fotografieren.</p>
 
-    <h2 id="aenderungen"><span class="num">16.</span>Änderungen dieser Datenschutzerklärung</h2>
+    <h2 id="aenderungen"><span class="num">18.</span>Änderungen dieser Datenschutzerklärung</h2>
     <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Funktionen abzubilden. Für Ihren erneuten Besuch bzw. die weitere Nutzung der App gilt dann die jeweils aktuelle Fassung. Den Stand erkennen Sie am Datum oben auf dieser Seite.</p>
 
     <hr>
